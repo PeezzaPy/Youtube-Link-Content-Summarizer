@@ -9,6 +9,9 @@ This project is a web application built with Flask that summarizes the content o
 * Provides a user-friendly web interface for input and summary display.
 * Responsive design for seamless usage on different devices.
 
+## Tutorial Installation of TailwindCSS
+https://tailwindcss.com/docs/installation
+
 ## Technologies Used
 * HTML, TailwindCSS
 * Python
