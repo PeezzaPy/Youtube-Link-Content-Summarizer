@@ -10,6 +10,7 @@ This project is a web application built with Flask that summarizes the content o
 * Responsive design for seamless usage on different devices.
 
 ## Technologies Used
+* HTML, TailwindCSS
 * Python
 * Flask
 * NLTK (Natural Language Toolkit)
