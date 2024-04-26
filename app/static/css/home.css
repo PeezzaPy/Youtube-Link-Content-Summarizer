@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+#input {
+    width: 50%;
+    margin: 0 auto;
+}
+#input form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#input > form > input {
+    padding: 7px;
+}
+
+#submit {
+    width: 15%;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#summary {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}

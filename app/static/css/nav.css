@@ -1,8 +1,12 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+nav {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+}
 
-* {
-    box-sizing: border-box;
+nav > ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
 }
 

@@ -3,6 +3,7 @@
     <head>
         <title>Home Page</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nav.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
     </head>
     <body>
         <header>
@@ -15,5 +16,18 @@
                 <ul>
             </nav>
         </header>
+        <main>
+            <div id="input">
+                <form action="{{ url_for('home.home_page')}}" method="post">
+                    <input type="text" name="yt-link" placeholder="Enter URL">
+                    <input id="submit" type="submit" value="Submit">
+                </form>
+            </div>
+            <div id="summary">
+                {% for item in summary %}
+                <p> {{ item }} </p>
+                {% endfor %}
+            </div>
+        </main>
     <body>
 </html>
