@@ -1,7 +1,7 @@
 import nltk
 import heapq
 
-# Once downloaded, you cant comment these lines
+# Once downloaded, you can comment these lines
 # nltk.download('stopwords')
 # nltk.download('punkt')
 
