@@ -3,14 +3,18 @@ from youtube_transcript_api import YouTubeTranscriptApi
 # Parse and get the video ID
 def get_video_id(url):
     # Identifier for youtube video url
-    start_pos = url.find("https://www.youtube.com/watch?v=")
-    end_pos = url.find("&ab_channel=")
+    if "youtube.com/watch?v=" in url:
+        start_pos = url.find("youtube.com/watch?v=")
+        end_pos = url.find("&")
+        video_id = url[start_pos + len("youtube.com/watch?v="):end_pos]
+    elif "youtu.be" in url:
+        start_pos = url.find("youtu.be/")
+        end_pos = url.find("?")
+        video_id = url[start_pos + len("youtu.be/"):end_pos]
 
     if start_pos == -1 or end_pos == -1:
         print("Not a valid youtube video link")
         return None
-
-    video_id = url[start_pos + len("https://www.youtube.com/watch?v="):end_pos]
 
     return video_id
 

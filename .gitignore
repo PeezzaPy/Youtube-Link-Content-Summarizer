@@ -1,5 +1,6 @@
 venv/
 node_modules/
-package-lock.json
-package.json
-tailwind.config.js
+app/__pycache__
+app/blueprints/__pycache__
+app/utils/__pycache__
+experimental.py
