@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from ..utils.transcript import *
+from ..utils.video_info import *
 from ..utils.summarizer import * 
 
 # Create a blueprint for the home page
@@ -15,16 +15,26 @@ def home_page():
         link = request.form.get('yt-link')
         if link:
             video_id = get_video_id(link)
+            title, publish_date = get_video_info(video_id)
             transcript = get_transcript(video_id)
-
-            # NLP for summarization
-            word_list = token(transcript)
-            sent_list = sent_token(transcript)
-            filtered_words = remove_stopwords(word_list)
-            word_frequency = word_freq(filtered_words)
-            word_frequency = max_freq(word_frequency)
-            sent_scores = sentence_scores(sent_list, word_frequency)
-            summary = get_summary(sent_scores)
+            
+            if transcript:               
+                # NLP for summarization
+                word_list = token(transcript)
+                print(f"Word List: {word_list}")
+                sent_list = sent_token(transcript)
+                print(f"Sentence List: {sent_list}")
+                filtered_words = remove_stopwords(word_list)
+                print(f"Filtered Words: {filtered_words}")
+                word_frequency = word_freq(filtered_words)
+                word_frequency = max_freq(word_frequency)
+                print(f"Word Frequency: {word_frequency}")
+                sent_scores = sentence_scores(sent_list, word_frequency)
+                print(f"Sentence Scores: {sent_scores}")
+                summary = get_summary(sent_scores)
+                print(f"Summary: {summary}")
+            else:
+                summary.append('TRANSCRIPT NOT AVAILABLE')
         else:
             summary.append('INPUT MUST NOT BE EMPTY')
 

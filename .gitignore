@@ -4,3 +4,4 @@ app/__pycache__
 app/blueprints/__pycache__
 app/utils/__pycache__
 experimental.py
+config.json
