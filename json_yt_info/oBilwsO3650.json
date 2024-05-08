@@ -1,0 +1,57 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "UCdfjrzgk4srMfLQ4XyiUTH0uXY",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "Ce_4i8XZy_XSv69gA6XBccY7jkg",
+            "id": "oBilwsO3650",
+            "snippet": {
+                "publishedAt": "2024-04-09T01:56:04Z",
+                "channelId": "UCHxlBTc0zFUc4atTii4toVg",
+                "title": "11 Minutes of TenZ PERFECT AIM | VALORANT HIGHLIGHTS",
+                "description": "11 Minutes of TenZ PERFECT AIM | VALORANT HIGHLIGHTS",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/oBilwsO3650/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/oBilwsO3650/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/oBilwsO3650/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/oBilwsO3650/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/oBilwsO3650/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Valorant Pro Spotlight ",
+                "categoryId": "20",
+                "liveBroadcastContent": "none",
+                "defaultLanguage": "en",
+                "localized": {
+                    "title": "11 Minutes of TenZ PERFECT AIM | VALORANT HIGHLIGHTS",
+                    "description": "11 Minutes of TenZ PERFECT AIM | VALORANT HIGHLIGHTS"
+                },
+                "defaultAudioLanguage": "en"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 1
+    }
+}

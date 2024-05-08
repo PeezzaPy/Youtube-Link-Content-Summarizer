@@ -2,7 +2,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api import TranscriptsDisabled
 from googleapiclient.discovery import build
 from .json_handler import *
-
+import re
 
 # Parse and get the video ID
 def get_video_id(url):
@@ -10,10 +10,14 @@ def get_video_id(url):
     if "youtube.com/watch?v=" in url:
         start_pos = url.find("youtube.com/watch?v=")
         end_pos = url.find("&")
+        if end_pos == -1:
+            end_pos = len(url)
         video_id = url[start_pos + len("youtube.com/watch?v="):end_pos]
     elif "youtu.be" in url:
         start_pos = url.find("youtu.be/")
         end_pos = url.find("?")
+        if end_pos == -1:
+            end_pos = len(url)
         video_id = url[start_pos + len("youtu.be/"):end_pos]
 
     if start_pos == -1 or end_pos == -1:
@@ -35,10 +39,30 @@ def get_transcript(video_id):
 
         # Remove new line (due to video subtitles positioning)
         all_text = all_text.replace("\n", " ")
-        
+
         return all_text
     except TranscriptsDisabled:
         return None
+
+
+# Preprocess string from transcript
+def clean_text(text):
+    # Remove special characters
+    text = re.sub(r'\W', ' ', text)
+
+    # Remove single characters left as a result of removing special characters
+    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
+
+    # Remove single characters from the start
+    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)
+
+    # Substitute multiple spaces with single space
+    text = re.sub(r'\s+', ' ', text, flags=re.I)
+    
+    # Convert to lowercase
+    text = text.lower()
+
+    return text
 
 
 # Get video info

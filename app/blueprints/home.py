@@ -18,7 +18,7 @@ def home_page():
             title, publish_date = get_video_info(video_id)
             transcript = get_transcript(video_id)
             
-            if transcript:               
+            if transcript:    
                 # NLP for summarization
                 word_list = token(transcript)
                 print(f"Word List: {word_list}")

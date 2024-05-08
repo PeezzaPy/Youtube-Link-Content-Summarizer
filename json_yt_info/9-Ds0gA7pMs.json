@@ -1,0 +1,92 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "zGhabX6LdiSrYp6IN8UTfPMohJ8",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "YSYdfDcgr8LW6q0qTINOurjhuF4",
+            "id": "9-Ds0gA7pMs",
+            "snippet": {
+                "publishedAt": "2021-05-18T15:00:39Z",
+                "channelId": "UCsooa4yRKGN_zEE8iknghZA",
+                "title": "Can you be awake and asleep at the same time? - Masako Tamaki",
+                "description": "Discover the phenomenon known as asymmetrical sleep, where parts of an animal's brain are asleep while other areas remain active.\n\n--\n\nMany animals need sleep. But all of the threats and demands animals face don\u2019t just go away when it\u2019s time to doze. That\u2019s why a range of birds, mammals, and even humans experience some degree of asymmetrical sleep, where parts of the brain are asleep and other areas are more active. So, how does it work? Masako Tamaki explores how animals' brains remain vigilant even at their most vulnerable.\n\nLesson by Masako Tamaki, directed by Biljana Labovi\u0107.\nAnimated by Iva \u0106iri\u0107, designed by Manja \u0106iri\u0107.\n\nSupport Our Non-Profit Mission\n----------------------------------------------\nSupport us on Patreon: http://bit.ly/TEDEdPatreon\nCheck out our merch: http://bit.ly/TEDEDShop\n----------------------------------------------\n\nConnect With Us\n----------------------------------------------\nSign up for our newsletter: http://bit.ly/TEDEdNewsletter\nFollow us on Facebook: http://bit.ly/TEDEdFacebook\nFind us on Twitter: http://bit.ly/TEDEdTwitter\nPeep us on Instagram: http://bit.ly/TEDEdInstagram\n----------------------------------------------\n\nKeep Learning\n----------------------------------------------\nView full lesson: https://ed.ted.com/lessons/can-you-be-awake-and-asleep-at-the-same-time-masako-tamaki\nDig deeper with additional resources: https://ed.ted.com/lessons/can-you-be-awake-and-asleep-at-the-same-time-masako-tamaki#digdeeper\n\nAnimator's website: https://ivaciric.com/\nDesigner's website: https://www.behance.net/manjaciric\n----------------------------------------------\n\nThank you so much to our patrons for your support! Without you this video would not be possible! Mark Byers, Avinash Amarnath, Xuebicoco, Rare Media, Rayo, Po Foon Kwong, NinjaBoffin, Jesse Jurman, Josue Perez Miranda, Scott Markley, Elija Peterson, Ovidiu Mrd, Xavier dupont, paul g mohney, Aravind Battaje, Nathan Giusti, Helen Lee, Anthony Benedict, Karthik Balsubramanian, John Hong, Annastasshia Ames, Amy Lopez, Vinh-Thuy Nguyen, Liz Candee, Kathryn Vacha, Ugur Doga Sezgin, Anthony Arcis, Chung Wah Gnapp, Karmi Nguyen, Yelena Baykova, Harshita Jagdish Sahijwani, Nick Johnson, Carlos H. Costa, Roberto Patrick, Les Howard, Jennifer Kurkoski, Ryan B Harvey, Abhishek Bansal, Akinola Emmanuel, Jose Arcadio Valdes Franco, Karl Laius, JY Kang, Heidi Stolt, Alexis Hevia, Christina Salvatore, Karlee Finch, Michael Goldberg, Denise A Pitts, Doug Henry and Kristiyan Bonev.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/9-Ds0gA7pMs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/9-Ds0gA7pMs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/9-Ds0gA7pMs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/9-Ds0gA7pMs/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/9-Ds0gA7pMs/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "TED-Ed",
+                "tags": [
+                    "brain sleep",
+                    "asymmetrical sleep",
+                    "unihemispheric sleep",
+                    "brain hemisphere",
+                    "bottlenose dolphin",
+                    "jellyfish",
+                    "fur seals",
+                    "mallard ducks",
+                    "frigatebirds",
+                    "frigate bird sleep while flying",
+                    "first night effect",
+                    "left hemisphere",
+                    "right hemisphere",
+                    "brain activity",
+                    "neurons",
+                    "deep sleep",
+                    "brains",
+                    "dolphins sleep half brain",
+                    "animals sleeping",
+                    "how animals sleep",
+                    "science",
+                    "biology",
+                    "evolution",
+                    "education",
+                    "animation",
+                    "masako tamaki",
+                    "Biljana Labovi\u0107",
+                    "Iva \u0106iri\u0107",
+                    "Manja \u0106iri\u0107",
+                    "TED",
+                    "TED-Ed",
+                    "TED Ed",
+                    "Teded",
+                    "Ted Education"
+                ],
+                "categoryId": "27",
+                "liveBroadcastContent": "none",
+                "localized": {
+                    "title": "Can you be awake and asleep at the same time? - Masako Tamaki",
+                    "description": "Discover the phenomenon known as asymmetrical sleep, where parts of an animal's brain are asleep while other areas remain active.\n\n--\n\nMany animals need sleep. But all of the threats and demands animals face don\u2019t just go away when it\u2019s time to doze. That\u2019s why a range of birds, mammals, and even humans experience some degree of asymmetrical sleep, where parts of the brain are asleep and other areas are more active. So, how does it work? Masako Tamaki explores how animals' brains remain vigilant even at their most vulnerable.\n\nLesson by Masako Tamaki, directed by Biljana Labovi\u0107.\nAnimated by Iva \u0106iri\u0107, designed by Manja \u0106iri\u0107.\n\nSupport Our Non-Profit Mission\n----------------------------------------------\nSupport us on Patreon: http://bit.ly/TEDEdPatreon\nCheck out our merch: http://bit.ly/TEDEDShop\n----------------------------------------------\n\nConnect With Us\n----------------------------------------------\nSign up for our newsletter: http://bit.ly/TEDEdNewsletter\nFollow us on Facebook: http://bit.ly/TEDEdFacebook\nFind us on Twitter: http://bit.ly/TEDEdTwitter\nPeep us on Instagram: http://bit.ly/TEDEdInstagram\n----------------------------------------------\n\nKeep Learning\n----------------------------------------------\nView full lesson: https://ed.ted.com/lessons/can-you-be-awake-and-asleep-at-the-same-time-masako-tamaki\nDig deeper with additional resources: https://ed.ted.com/lessons/can-you-be-awake-and-asleep-at-the-same-time-masako-tamaki#digdeeper\n\nAnimator's website: https://ivaciric.com/\nDesigner's website: https://www.behance.net/manjaciric\n----------------------------------------------\n\nThank you so much to our patrons for your support! Without you this video would not be possible! Mark Byers, Avinash Amarnath, Xuebicoco, Rare Media, Rayo, Po Foon Kwong, NinjaBoffin, Jesse Jurman, Josue Perez Miranda, Scott Markley, Elija Peterson, Ovidiu Mrd, Xavier dupont, paul g mohney, Aravind Battaje, Nathan Giusti, Helen Lee, Anthony Benedict, Karthik Balsubramanian, John Hong, Annastasshia Ames, Amy Lopez, Vinh-Thuy Nguyen, Liz Candee, Kathryn Vacha, Ugur Doga Sezgin, Anthony Arcis, Chung Wah Gnapp, Karmi Nguyen, Yelena Baykova, Harshita Jagdish Sahijwani, Nick Johnson, Carlos H. Costa, Roberto Patrick, Les Howard, Jennifer Kurkoski, Ryan B Harvey, Abhishek Bansal, Akinola Emmanuel, Jose Arcadio Valdes Franco, Karl Laius, JY Kang, Heidi Stolt, Alexis Hevia, Christina Salvatore, Karlee Finch, Michael Goldberg, Denise A Pitts, Doug Henry and Kristiyan Bonev."
+                },
+                "defaultAudioLanguage": "en"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 1
+    }
+}
