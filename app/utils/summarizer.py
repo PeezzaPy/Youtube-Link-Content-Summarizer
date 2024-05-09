@@ -1,17 +1,19 @@
 import nltk
 import heapq
 
-# Once downloaded, you cant comment these lines
-nltk.download('stopwords')
-nltk.download('punkt')
+# Once downloaded, you can comment these lines
+# nltk.download('stopwords')
+# nltk.download('punkt')
 
 def token(text):
     word_list = nltk.word_tokenize(text)
     return word_list
 
+
 def sent_token(text):
     sent_list = nltk.sent_tokenize(text)
     return sent_list
+
 
 def remove_stopwords(word_list):
     stopwords = set(nltk.corpus.stopwords.words('english'))
@@ -22,6 +24,7 @@ def remove_stopwords(word_list):
             filtered_words.append(word)
 
     return filtered_words
+
 
 def word_freq(filtered_words):
     word_frequency = {}
