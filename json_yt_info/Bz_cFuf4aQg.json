@@ -1,0 +1,61 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "nsR7Sawu_2PwYEA5KHkqDVHjlg4",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "DnSnuuwjvj-Id5xdvCjwXij0NHY",
+            "id": "Bz_cFuf4aQg",
+            "snippet": {
+                "publishedAt": "2020-05-13T21:23:41Z",
+                "channelId": "UC0Wsq7jol_pcmm28dTLNUAQ",
+                "title": "The Wumpus World",
+                "description": "This video is about wumpus world and how knowledge based agent is used in the wumpus world.\n\nRelated Videos:\nBreadth First Search : https://youtu.be/ksinr15Nlmo\nUniform Cost Search : https://youtu.be/_ASAGjvI980\nKnowledge Based Agent :  https://youtu.be/USjMRUp-iGc\nKnowledge Based Agent Program : https://youtu.be/BefnFPpZYpo\n\n\nArtificial Intelligence Playlist:\nhttps://www.youtube.com/watch?v=UF5GdeHFjxA&list=PL4AJHJHD5lHS0ozURX0w2Y9Wlt4rxZRqL\n \n\n\n**************************************************************************************\nAbout Me\nHi, I'm Padmapani Tribhuvan. This is my channel about Subjects in Computer Science and Engineering and you learn subjects from here. If you want to learn Computer Science and Engineering subjects  in a simple way, subscribe to my channel.\nI work as Assistant Professor in the Department of Computer Science and Engineering , Deogiri Institute of Engineering and Management Studies, Aurangabad, Maharashtra. Since 2007, I have been working in the teaching field.\nTo learn more different computer science and engineering subjects in a simple way, subscribe to my channel to stay informed.\n\nHow you can contact me \nEmail : padmapanichhayaprakash@gmail.com \nWhere else you can find me:\nFacebook :  https://www.facebook.com/Being-Passionate-Learner-107173577636328\nResearchGate : https://www.researchgate.net/profile/Padmapani_Tribhuvan\nLinkedin :https://in.linkedin.com/in/padmapani-tribhuvan-752b4977\nGoogle Scholar : https://scholar.google.com/citations?hl=en&user=ymimFZAAAAAJ",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Bz_cFuf4aQg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Bz_cFuf4aQg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Bz_cFuf4aQg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Bz_cFuf4aQg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/Bz_cFuf4aQg/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Being Passionate Learner",
+                "tags": [
+                    "The Wumpus World",
+                    "Knowledge based agent",
+                    "Knowlegde based agent program"
+                ],
+                "categoryId": "27",
+                "liveBroadcastContent": "none",
+                "localized": {
+                    "title": "The Wumpus World",
+                    "description": "This video is about wumpus world and how knowledge based agent is used in the wumpus world.\n\nRelated Videos:\nBreadth First Search : https://youtu.be/ksinr15Nlmo\nUniform Cost Search : https://youtu.be/_ASAGjvI980\nKnowledge Based Agent :  https://youtu.be/USjMRUp-iGc\nKnowledge Based Agent Program : https://youtu.be/BefnFPpZYpo\n\n\nArtificial Intelligence Playlist:\nhttps://www.youtube.com/watch?v=UF5GdeHFjxA&list=PL4AJHJHD5lHS0ozURX0w2Y9Wlt4rxZRqL\n \n\n\n**************************************************************************************\nAbout Me\nHi, I'm Padmapani Tribhuvan. This is my channel about Subjects in Computer Science and Engineering and you learn subjects from here. If you want to learn Computer Science and Engineering subjects  in a simple way, subscribe to my channel.\nI work as Assistant Professor in the Department of Computer Science and Engineering , Deogiri Institute of Engineering and Management Studies, Aurangabad, Maharashtra. Since 2007, I have been working in the teaching field.\nTo learn more different computer science and engineering subjects in a simple way, subscribe to my channel to stay informed.\n\nHow you can contact me \nEmail : padmapanichhayaprakash@gmail.com \nWhere else you can find me:\nFacebook :  https://www.facebook.com/Being-Passionate-Learner-107173577636328\nResearchGate : https://www.researchgate.net/profile/Padmapani_Tribhuvan\nLinkedin :https://in.linkedin.com/in/padmapani-tribhuvan-752b4977\nGoogle Scholar : https://scholar.google.com/citations?hl=en&user=ymimFZAAAAAJ"
+                },
+                "defaultAudioLanguage": "en-IN"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 1
+    }
+}
