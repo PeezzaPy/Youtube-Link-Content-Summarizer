@@ -2,8 +2,8 @@ import nltk
 import heapq
 
 # Once downloaded, you cant comment these lines
-# nltk.download('stopwords')
-# nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('punkt')
 
 def token(text):
     word_list = nltk.word_tokenize(text)

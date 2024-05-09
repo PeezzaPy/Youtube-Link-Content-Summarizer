@@ -1,9 +1,110 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Get Started</title>
-    </head>
-    <body>
-        <p>GET STARTED PAGE</p>
-    </body>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=" {{ url_for('static', filename='css/get_started.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Insight.</title>
+</head>
+<title>YouTube Video ID Extractor</title>
+</head>
+<body>
+  <!--Will be deleted pag maayos na navbar-->
+  <div class="bar">
+    <p class="logo"> INSIGHT. </p>
+    <div class="nav">
+        <p> Home </p>
+        <p> About </p>
+        <p> Workaround </p>
+    </div>
+    <div class="how-to">
+        <p> How to use? </p>
+    </div>
+    <div class="get-started">
+        <a href="{{ url_for('get_started.get_started_page') }}"> Get Started </a>
+        <img src="{{ url_for('static', filename='assets/rightarrow.png')}}" alt="right arrow">
+    </div>
+</div>
+<div class="container1">
+  <p> SUMMARIZE YOUTUBE VIDEO<br>
+     USING NLP</p>
+</div>
+
+<div class="container2">
+  <h5>Paste link here:</h5>
+  <form id="youtubeForm" action="/summary" method="post">
+    <input type="text" id="youtubeLink" name="yt-link" placeholder="https://youtube.com/">
+    <button type="submit" id="submitButton">Start</button>
+  </form>
+</div>
+
+
+
+<div class="container3">
+  <div class="description">
+      <div class="image">
+          <div class="circle">
+              <img src="{{ url_for('static', filename='assets/copy.svg')}}" alt="copy", id = "circleimg">
+          </div>
+          <div class="circle1">
+              <img src="{{ url_for('static', filename='assets/paste.svg')}}" alt="paste", id = "circleimg">
+          </div>
+      </div>
+      <h1 id="header1">Copy and Paste</h1>
+      <img src="{{ url_for('static', filename='assets/Line 1.svg')}}" alt="line" id="line1">
+      <p id="paragraph">Summarize videos easily by just copy and pasting a YouTube link.</p>
+  </div>
+
+  <div class="description">
+      <div class="image1">
+          <div class="circle">
+              <img src="{{ url_for('static', filename='assets/copy.svg')}}" alt="copy", id = "circleimg">
+          </div>
+          <div class="circle1">
+              <img src="{{ url_for('static', filename='assets/sum.svg')}}" alt="sum", id = "circleimg">
+          </div>
+      </div>
+      <h1 id="header1">Natural Language<br>Processing</h1>
+      <img src="{{ url_for('static', filename='assets/Line 1.svg')}}" alt="line" id="line1">
+      <p id="paragraph">Summarize videos easily by just copy and pasting a YouTube link.</p>
+  </div>
+
+  <div class="description">
+      <div class="image">
+          <div class="circle">
+              <img src="{{ url_for('static', filename='assets/copy.svg')}}" alt="copy", id = "circleimg">
+          </div>
+          <div class="circle1">
+              <img src="{{ url_for('static', filename='assets/tiles.svg')}}" alt="tiles", id = "circleimg">
+          </div>
+      </div>
+      <h1 id="header1">Ease of Use</h1>
+      <img src="{{ url_for('static', filename='assets/Line 1.svg')}}" alt="line" id="line1">
+      <p id="paragraph">Summarize videos easily by just copy and pasting a YouTube link.</p>
+  </div>
+
+  <div class="description">
+      <div class="image">
+          <div class="circle">
+              <img src="{{ url_for('static', filename='assets/copy.svg')}}" alt="copy", id = "circleimg">
+          </div>
+          <div class="circle1">
+              <img src="{{ url_for('static', filename='assets/ff.svg')}}" alt="ff", id = "circleimg">
+          </div>
+      </div>
+      <h1 id="header1">Fast and Reliable</h1>
+      <img src="{{ url_for('static', filename='assets/Line 1.svg')}}" alt="line" id="line1">
+      <p id="paragraph">Summarize videos easily by just copy and pasting a YouTube link.</p>
+  </div>
+</div>
+
+
+
+
+</body>
 </html>
