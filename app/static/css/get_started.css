@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: #121212;
+}
+
+.bar{
+    max-width: 100%;
+    background-color: #212121;
+    height: 80px;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 36px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    width: 341px;
+    height: 40px;
+    background-color: white;
+    margin-left: 20px;
+    font-size: 14px;
+    color: black;
+    justify-content: space-evenly;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 700;
+}
+
+.nav p{
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.nav p:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.how-to{
+    font-size: 14px;
+    font-weight: 300;
+    padding-right: 20px;
+    margin-left: auto;
+}
+
+.how-to:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.get-started{
+    font-size:  14px;
+    max-height: 50px;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    width: 150px;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 700;
+    justify-content: space-evenly;
+}
+
+.get-started:hover{
+    color:white;
+    cursor: pointer;
+    background-color: red;
+}
+
+/* End of Nav */
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 36px;
+    width: 50%;
+    font-weight: bold;
+    padding-top: 25px;
+    margin: 0 auto; /* Center horizontally */
+    text-align: center;
+    justify-content: center;
+}
+
+.container2{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    width: 50%;
+    padding-top: 25px;
+    margin: 0 auto; /* Center horizontally */
+    justify-content: center;
+}
+
+h5 {
+    margin-right: auto;
+    padding-left: 45px; /* Push the text to the left */
+    font-weight: 400;
+    font-size: 18;
+  }
+
+#youtubeLink {
+    border-radius: 20px; 
+    border: 1px solid #ccc; 
+    padding-left: 25px;
+    width: 580px;
+    height: 55px;
+}
+
+#submitButton {
+    background-color: red; /* Set background color to red */
+    color: white; /* Set font color to white */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Add border radius for rounded corners */
+    /*padding: 10px 20px;  Add padding for better appearance */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width: 100px;
+    height: 60px;
+    position: relative;
+    left: -35px;
+}
+
+.container2 form {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    padding-left: 30px;
+    
+}
+
+.container2 input[type="text"],
+.container2 button {
+    flex: w;
+    margin: 0; /* Remove default margin */
+}
+
+
+.container3 {
+    width: 80%;
+    height: 280px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center; /* Add space between child containers */
+    flex-wrap: wrap;
+    margin: 0 auto ;
+    margin-top: 25px;
+    padding-bottom: 0%;
+    color: white; /* Set font color to white */
+   
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #2B2B2B;
+    width: 20%; /* Adjust width to accommodate space between containers */
+    height: 100%;
+    border-radius: 30px;
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
+.image{
+    margin-right: auto;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    padding-right: 45px; /* Push the text to the left */
+    margin: 20px;
+    border-radius: 20px;
+    width: 65%;
+    margin-bottom: 70px;
+    
+}
+
+.image1{
+    margin-right: auto;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    padding-right: 45px; /* Push the text to the left */
+    margin: 20px;
+    border-radius: 20px;
+    width: 65%;
+    margin-bottom: 43px;
+}
+
+.circle {
+    width: 60px; /* Set circle width */
+    height: 60px; /* Set circle height */
+    border-radius: 50%; /* Make circle shape */
+    border: 3px solid red; /* Add red border */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #262626;
+}
+
+
+.circle1{
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Position the second circle relative to the first circle */
+    width: 60px; /* Set circle width */
+    height: 60px; /* Set circle height */
+    border-radius: 50%; /* Make second circle shape */
+    background-color: #262626;
+    border: 3px solid red; /* Add red border */
+    left: -15px;
+    
+
+}
+
+#circleimg {
+    width: 40px; /* Set the desired width */
+    height: 40px;
+}
+
+#header1{
+    font-size: 23px;
+    font-weight: regular;
+    margin-bottom: 0;
+    font-family: "Roboto";
+    margin-left: 20px;
+}
+
+#line1 {
+    /* Your CSS styles for the image with ID "line" */
+    width: 85%;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#paragraph {
+    font-size: 12px;
+    font-weight: light;
+    margin-left: 20px;
+    font-family: "Poppins", sans-serif;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+

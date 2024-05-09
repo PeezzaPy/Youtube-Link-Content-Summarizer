@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: #121212;
+}
+
+.bar{
+    max-width: 100%;
+    background-color: #212121;
+    height: 80px;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 36px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    width: 341px;
+    height: 40px;
+    background-color: white;
+    margin-left: 20px;
+    font-size: 14px;
+    color: black;
+    justify-content: space-evenly;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 700;
+}
+
+.nav p{
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.nav p:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: white;
+    background-color:chartreuse;
+    width: 50%;
+    height: 200px;
+    margin: 0% auto;
+}
+
+.video-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: white;
+    background-color: aqua;
+    width: 200px;
+    height: 150;
+}
+
+.video-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: white;
+    background-color: darkcyan;
+    width: 480px;
+    height: 150;
+}
+
+
+.output{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+}
+
+.output-box {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 10px solid #212121;
+    border-radius: 20px;
+    background-color: transparent;
+    overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+    height: 250px; /* Set maximum height for the output box */
+    margin-top: 20px;
+  }
+
+  /* Style for output text */
+  .output-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Style for list inside output */
+  .output p {
+    list-style-type: none;
+    padding: 0;
+    margin: 25px ;
+  }
+  
+  /* Style for list items */
+  .output li {
+    margin-bottom: 10px;
+  }
+
+/* End of Nav */
+
