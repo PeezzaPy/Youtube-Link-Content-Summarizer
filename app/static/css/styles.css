@@ -6,7 +6,7 @@ body{
 }
 
 .bar{
-    max-width: 100%;
+    max-width: auto ;
     background-color: #212121;
     height: 80px;
     color: white;
@@ -15,8 +15,8 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     display: flex;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 10vw;
+    padding-right: 10vw;
     flex-direction: row;
     align-items: center;
     font-size: 36px;
@@ -101,70 +101,5 @@ body{
 .get-started a{
     text-decoration: none;
     color: black;
-}
-
-/* End of Nav */
-
-.container1{
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-size: 36px;
-    padding-left: 150px;
-    max-width: 1700px;
-    height: 100vh;
-    font-weight: bold;
-    padding-top: 25px;
-    padding-right: 150px;
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 42% 58%;
-    gap: 20px;
-    padding-left: 150px;
-    padding-right: 150px;
-    max-width: 100%;
-    height: 60vh;
-    padding-top: 25px;
-}
-
-.column1{
-    font-family: "Poppins", sans-serif;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.column1 img{
-    height: 304px;
-    width: 500px;
-    padding-top: 10px;
-}
-
-.column2{
-    padding-top: 175px;
-}
-
-.box{
-    background-color: #212121;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 240px;
-    padding: 30px;
-}
-
-.header1 {
-    color: white;
-    font-size: 30px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-}
-
-.body-text1{
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
 }
 
