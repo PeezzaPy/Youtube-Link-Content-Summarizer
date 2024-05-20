@@ -3,53 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href=" {{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Insight.</title>
 </head>
 <body>
-    <div class="bar">
-        <a><p class="logo"> INSIGHT. </p></a>
-        <div class="nav">
-            <a href="#"><p> Home </p></a>
-            <p> About </p>
-            <p> Workaround </p>
-        </div>
-        <div class="how-to">
-            <p> How to use? </p>
-        </div>
-        <div class="get-started">
-            <a href="{{ url_for('get_started.get_started_page') }}"> Get Started </a>
-            <img src="{{ url_for('static', filename='assets/rightarrow.png')}}" alt="right arrow">
-        </div>
-    </div>
-    <!--Content-->
-    <div class="container">
-        <div class="column1">
-            <p> Summarize Youtube Videos <br>
-                By Levaraging Natural<br>
-                Language Processing</p>
-            <img src="{{ url_for('static', filename='assets/youtubepic.png') }}" alt="youtubepic">
-        </div>
-        <div class="column2">
-            <div class="box">
-                <p class="header1">What is Natural Language Processing?</p>
-                <p class="body-text1">Natural language processing (NLP) is like teaching computers to
-                    understand and work with human language. It involves developing
-                    algorithms and models that enables computers to comprehend, interpret,
-                    and generate human language in a way that's similar to how people do. 
-                    For instance, NLP helps computers understand the meaning of 
-                    sentences, extract information from text, and translate languages.
-                </p>
+    <nav class="h-16 
+                w-full bg-gray-800 
+                text-white 
+                flex 
+                items-center sm:w-full">
+        <div class="container mx-auto flex justify-between items-center w-4/5">
+            <a href="{{url_for('home.home_page')}}"><p class="text-2xl font-bold hover:text-red-800">insight</p></a>
+            <ul class="flex space-x-12 ">
+                <a href="{{url_for('home.home_page')}}"><li class="hover:text-red-800">Home</li></a>
+                <a href="#"><li class="hover:text-red-800">About</li></a>
+                <a href="#"><li class="hover:text-red-800">Workaround</li></a>
+            </ul>
+            <div class="flex items-center space-x-4">
+                <p class="text-xs">How it works?</p>
+                <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Get Started</button>
             </div>
         </div>
-    </div>
-    <div class="container-2">
-        <div class="button">
-            <p> Hello World </p>
-        </div>
+    </nav>
+    <!-- Content -->
+    <div class="h-screen w-4/5 mx-auto bg-gray-500">
     </div>
 </body>
 </html>
