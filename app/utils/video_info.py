@@ -27,24 +27,6 @@ def get_video_id(url):
     return video_id
 
 
-# Get transcript only from dict object
-def get_transcript(video_id):
-    all_text = ""   # store all text from transcript
-    try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
-
-        # Parse the text only
-        for item in transcript:
-            all_text += item['text'] + " "
-
-        # Remove new line (due to video subtitles positioning)
-        all_text = all_text.replace("\n", " ")
-
-        return all_text
-    except TranscriptsDisabled:
-        return None
-
-
 # Preprocess string from transcript
 def clean_text(text):
     # Remove special characters
@@ -64,6 +46,24 @@ def clean_text(text):
 
     return text
 
+
+# Get transcript only from dict object
+def get_transcript(video_id):
+    all_text = ""   # store all text from transcript
+    try:
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+
+        # Parse the text only
+        for item in transcript:
+            all_text += item['text'] + " "
+
+        # Remove new line (due to video subtitles positioning)
+        all_text = all_text.replace("\n", " ")
+
+        return all_text
+    except TranscriptsDisabled:
+        return None
+    
 
 # Get video info
 def get_video_info(video_id):
