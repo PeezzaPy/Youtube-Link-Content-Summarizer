@@ -53,7 +53,21 @@
       </div>
     </div>
     <div class="content-wrapper2">
-      
+      <div class="card-container">
+        <div class="card1">
+          <div class="card1-content1">
+            <p class="header">YOUTUBE VIDEO TOO LONG?<br>WE MADE IT EASY FOR YOU!</p>
+            <img src="{{url_for('static', filename='assets/ted.svg')}}">
+          </div>
+          <div class="card1-content2">
+            <p class="header">How is it possible?</p>
+            <p class="body-text">Insight. Uses Youtube API to get video captions from the provided youtube link. It will then extract the caption from that video. The extracted caption from the video will be fed into the Natural Language Processing system wherein the captions will be processed to output a summarized version of the captions. </p>
+          </div>
+        </div>
+        <div class="card2">
+          <p class="header">bottom</p>
+        </div>
+      </div>
     </div>
   <script src="{{ url_for('static', filename='js/my.js') }}"></script>
 </body>
