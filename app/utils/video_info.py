@@ -72,7 +72,7 @@ def get_video_info(video_id):
     youtube = build('youtube', 'v3', developerKey=api_key)
     
     request = youtube.videos().list(
-        part="snippet",
+        part="snippet, statistics",
         id=video_id
     )
     response = request.execute()
@@ -80,11 +80,15 @@ def get_video_info(video_id):
     id = response['items'][0]['id']
     title = response['items'][0]['snippet']['title']
     publish_date = response['items'][0]['snippet']['publishedAt']
+    thumbnail = response['items'][0]['snippet']['thumbnails']['medium']['url']
+    channel = response['items'][0]['snippet']['channelTitle']
+    views = response['items'][0]['statistics']['viewCount']
+
     make_yt_info_json(response, id)
     
     print_video_info(title, publish_date)
 
-    return title, publish_date
+    return title, publish_date, thumbnail, channel, views
 
 
 # Logging data

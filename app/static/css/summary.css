@@ -119,8 +119,10 @@ body {
 
 .thumbnail {
     /* Add styling for the thumbnail container */
+    position: relative;
     margin-top: 20px;
     background-color: blueviolet;
+    background-size: cover;
     width: 300px;
     height: 250px;
     border-radius: 20px;
@@ -130,6 +132,10 @@ body {
 .thumbnail img {
     /* Add styling for the thumbnail image */
     max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .actions {

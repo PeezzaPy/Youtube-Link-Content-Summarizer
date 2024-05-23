@@ -23,9 +23,7 @@
 
 <div class="container">
 
-      <div class="thumbnail">
-          <!-- Your thumbnail content goes here -->
-          <img src="app\static\assets\youtubepic.png" alt="Thumbnail">
+      <div class="thumbnail" style="background-image: url({{ thumbnail }})">
       </div>
 
 
@@ -34,19 +32,19 @@
           <table>
             <tr>
                 <td id="td1">Video Title</td>
-                <td id="td2">{{video_title}}</td>
+                <td id="td2">{{ video_title }}</td>
             </tr>
             <tr>
                 <td id="td1">Channel</td>
-                <td id="td2">ssssss</td>
+                <td id="td2">{{ channel }}</td>
             </tr>
             <tr>
                 <td id="td1">Views</td>
-                <td id="td2">dddddd</td>
+                <td id="td2">{{ views }}</td>
             </tr>
             <tr>
                 <td id="td1">Date Uploaded</td>
-                <td id="td2">{{video_date}}</td>
+                <td id="td2">{{ video_date }}</td>
             </tr>
         </table>
       </div>

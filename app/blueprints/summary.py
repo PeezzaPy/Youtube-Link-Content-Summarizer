@@ -16,7 +16,7 @@ def summary_page():
         link = request.form.get('yt-link')
         if link:
             video_id = get_video_id(link)
-            video_title, publish_date = get_video_info(video_id)
+            video_title, publish_date, thumbnail, channel, views = get_video_info(video_id)
             transcript = get_transcript(video_id)
 
             if transcript:    
@@ -40,7 +40,7 @@ def summary_page():
         else:
             summary += 'INPUT MUST NOT BE EMPTY'
 
-    return render_template('summary.html', summary=summary, video_title=video_title, video_date=publish_date)
+    return render_template('summary.html', summary=summary, thumbnail=thumbnail, video_title=video_title, video_date=publish_date, channel=channel, views=views)
 
 
 def log_routing(request):
