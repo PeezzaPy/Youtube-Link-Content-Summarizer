@@ -30,16 +30,21 @@
         <img src="{{ url_for('static', filename='assets/rightarrow.png')}}" alt="right arrow">
     </div>
 </div>
+
+
+
 <div class="container1">
   <p> SUMMARIZE YOUTUBE VIDEO<br>
      USING NLP</p>
 </div>
 
 <div class="container2">
-  <h5>Paste link here:</h5>
   <form id="youtubeForm" action="/summary" method="post">
+    <h5>Paste link here:</h5>
+    <div class = "ytform">
     <input type="text" id="youtubeLink" name="yt-link" placeholder="https://youtube.com/">
     <button type="submit" id="submitButton">Start</button>
+</div>
   </form>
 </div>
 
