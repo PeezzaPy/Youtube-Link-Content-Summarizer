@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
 }
-body{
+body {
     background-color: #121212;
 }
 
-.bar{
+.bar {
     max-width: 100%;
     background-color: #212121;
     height: 80px;
@@ -22,7 +22,7 @@ body{
     font-size: 36px;
 }
 
-.nav{
+.nav {
     display: flex;
     align-items: center;
     width: 341px;
@@ -39,7 +39,7 @@ body{
     font-weight: 700;
 }
 
-.nav p{
+.nav p {
     cursor: pointer;
 }
 
@@ -48,25 +48,25 @@ body{
     cursor: pointer;
 }
 
-.nav p:hover{
+.nav p:hover {
     color: red;
     cursor: pointer;
 }
 
-.how-to{
+.how-to {
     font-size: 14px;
     font-weight: 300;
     padding-right: 20px;
     margin-left: auto;
 }
 
-.how-to:hover{
+.how-to:hover {
     color: red;
     cursor: pointer;
 }
 
-.get-started{
-    font-size:  14px;
+.get-started {
+    font-size: 14px;
     max-height: 50px;
     height: 50px;
     border-bottom-left-radius: 10px;
@@ -83,8 +83,8 @@ body{
     justify-content: space-evenly;
 }
 
-.get-started:hover{
-    color:white;
+.get-started:hover {
+    color: white;
     cursor: pointer;
     background-color: red;
 }
@@ -93,11 +93,9 @@ body{
 
 .container1 {
     display: flex;
-    flex-wrap: wrap;
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 36px;
-    width: 50%;
     font-weight: bold;
     padding-top: 25px;
     margin: 0 auto; /* Center horizontally */
@@ -105,50 +103,48 @@ body{
     justify-content: center;
 }
 
-.container2{
+.container2 {
     display: flex;
     flex-wrap: wrap;
     color: white;
     font-family: "Poppins", sans-serif;
-    width: 50%;
-    padding-top: 25px;
-    margin: 0 auto; /* Center horizontally */
-    justify-content: center;
+    margin-top: 25px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: medium;
+    width: 100%;
+
 }
 
-h5 {
-    margin-right: auto;
-    padding-left: 45px; /* Push the text to the left */
-    font-weight: 400;
-    font-size: 18;
-  }
+
 
 #youtubeLink {
-    border-radius: 20px; 
-    border: 1px solid #ccc; 
+    border-radius: 20px;
+    border: 1px solid #ccc;
     padding-left: 25px;
     width: 580px;
     height: 55px;
 }
 
 #submitButton {
-    background-color: red; /* Set background color to red */
-    color: white; /* Set font color to white */
-    border: none; /* Remove border */
-    border-radius: 20px; /* Add border radius for rounded corners */
-    /*padding: 10px 20px;  Add padding for better appearance */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
     width: 100px;
     height: 60px;
     position: relative;
     left: -35px;
 }
 
-.container2 form {
+#youtubeForm {
     display: flex;
     font-family: "Poppins", sans-serif;
-    padding-left: 30px;
-    
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-inline-start: 35px;
 }
 
 .container2 input[type="text"],
@@ -157,7 +153,6 @@ h5 {
     margin: 0; /* Remove default margin */
 }
 
-
 .container3 {
     width: 80%;
     height: 280px;
@@ -165,11 +160,10 @@ h5 {
     display: flex;
     justify-content: center; /* Add space between child containers */
     flex-wrap: wrap;
-    margin: 0 auto ;
+    margin: 0 auto;
     margin-top: 25px;
     padding-bottom: 0%;
     color: white; /* Set font color to white */
-   
 }
 
 .description {
@@ -178,13 +172,14 @@ h5 {
     text-align: left;
     background-color: #2B2B2B;
     width: 20%; /* Adjust width to accommodate space between containers */
-    height: 100%;
+    /* height: 100%; */      
+    padding-bottom: 20px;
     border-radius: 30px;
     margin-bottom: 0;
     margin-right: 15px;
 }
 
-.image{
+.image {
     margin-right: auto;
     display: flex; /* Use flexbox */
     align-items: center; /* Center vertically */
@@ -193,10 +188,9 @@ h5 {
     border-radius: 20px;
     width: 65%;
     margin-bottom: 70px;
-    
 }
 
-.image1{
+.image1 {
     margin-right: auto;
     display: flex; /* Use flexbox */
     align-items: center; /* Center vertically */
@@ -218,8 +212,7 @@ h5 {
     background-color: #262626;
 }
 
-
-.circle1{
+.circle1 {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -230,8 +223,6 @@ h5 {
     background-color: #262626;
     border: 3px solid red; /* Add red border */
     left: -15px;
-    
-
 }
 
 #circleimg {
@@ -239,7 +230,7 @@ h5 {
     height: 40px;
 }
 
-#header1{
+#header1 {
     font-size: 23px;
     font-weight: regular;
     margin-bottom: 0;
@@ -266,9 +257,303 @@ h5 {
 
 
 
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .bar {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 24px;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .container2 {
+        font-size: 14px;
+        align-items: center;
+
+    }
+  
+
+    .container1 {
+        font-size: 24px;
+    }
+    
+
+    #youtubeLink {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding-left: 25px;
+    width: 480px;
+    height: 55px;
+}
+
+#submitButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 60px;
+    position: relative;
+    left: -35px;
+}
+
+#youtubeForm {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.description {
+    width: 90%;
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.container2 input[type="text"],
+.container2 button {
+    flex: w;
+    margin: 0; /* Remove default margin */
+}
+
+}
+
+@media (max-width: 550px) {
+    .bar {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+    }
+
+    .nav {
+        font-size: 10px;
+    }
+
+    .container1 {
+        font-size: 24px;
+    }
+
+    .container2 {
+        width: 100%;
+    }
+
+    #youtubeLink {
+        width: 300px;
+        height: 35px;
+    }
+
+    #submitButton {
+        width: 60px;
+        height: 40px;
+   
+    }
+
+    #youtubeForm {
+        padding-inline-start: 30x;
+    }
+
+    .description {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
 
 
+/* For large mobile screens */
+@media (max-width: 425px) {
+    .bar {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+    }
+
+    .nav {
+        font-size: 10px;
+    }
+
+    .container1 {
+        font-size: 24px;
+    }
+
+    .container2 {
+        width: 100%;
+    }
+
+    #youtubeLink {
+        width: 220px;
+        height: 35px;
+    }
+
+    #submitButton {
+        width: 60px;
+        height: 40px;
+   
+    }
+
+    #youtubeForm {
+        padding-inline-start: 30x;
+    }
+
+    .description {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* For medium mobile screens */
+@media (max-width: 375px) {
+    .bar {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 18px;
+    }
+
+    .nav {
+        font-size: 8px;
+    }
+
+    .container1 {
+        font-size: 22px;
+    }
+
+    .container2 {
+        width: 100%;
+    }
+
+    #youtubeLink {
+        width: 200px;
+    }
+
+    #submitButton {
+        width: 55px;
+        height: 35px;
+    }
+
+    .description {
+        width: 95%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* For small mobile screens */
+@media (max-width: 375px) {
+    .bar {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+    }
+
+    .nav {
+        font-size: 10px;
+    }
+
+    .container1 {
+        font-size: 24px;
+    }
+
+    .container2 {
+        font-size: 14px;
+
+    }
+
+    #submitButton {
+        width: 60px;
+        height: 40px;
+        position: relative;
+        left: -35px;
+    }
+    
+    #youtubeLink {
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 170px;
+        height: 35px;
+    }
+
+    .description {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    #youtubeForm {
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .container2 input[type="text"],
+.container2 button {
+    flex: w;
+    margin: 0; /* Remove default margin */
+}
+}
 
 
+/*
+@media (max-width: 480px) {
+    .bar {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+    }
 
+    .nav {
+        font-size: 10px;
+    }
 
+    .container1 {
+        font-size: 24px;
+    }
+
+    .container2 {
+        font-size: 14px;
+
+    }
+
+    #submitButton {
+        width: 60px;
+        height: 40px;
+        position: relative;
+        left: -35px;
+    }
+    
+    #youtubeLink {
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 300px;
+        height: 35px;
+    }
+
+    .description {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    #youtubeForm {
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .container2 input[type="text"],
+.container2 button {
+    flex: w;
+    margin: 0; 
+*/

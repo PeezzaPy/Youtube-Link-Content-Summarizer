@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 from ..utils.video_info import *
 from ..utils.summarizer_bart import * 
+from ..utils.summarizer import * 
 
 # Create a blueprint for the home page
 summary = Blueprint('summary', __name__)
@@ -15,7 +16,7 @@ def summary_page():
         link = request.form.get('yt-link')
         if link:
             video_id = get_video_id(link)
-            title, publish_date = get_video_info(video_id)
+            video_title, publish_date = get_video_info(video_id)
             transcript = get_transcript(video_id)
 
             if transcript:    
@@ -39,7 +40,7 @@ def summary_page():
         else:
             summary += 'INPUT MUST NOT BE EMPTY'
 
-    return render_template('summary.html', summary=summary)
+    return render_template('summary.html', summary=summary, video_title=video_title, video_date=publish_date)
 
 
 def log_routing(request):
