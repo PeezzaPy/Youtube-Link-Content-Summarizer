@@ -1,6 +1,9 @@
 app/blueprints/__pycache__/
 app/utils/__pycache__/
 app/__pycache__/
+data/
 venv/
 config.json
 experimental.py
+requirements.txt
+
