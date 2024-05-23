@@ -9,11 +9,12 @@ body {
     background-color: #121212;
 }
 .container {
-    width: 80%;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px 40px;
     color: #e1e1e1;
 }
+
 a {
     color: #e1e1e1;
     text-decoration: none;
@@ -23,11 +24,32 @@ a {
     margin: 20px 0;
     border-bottom: 2px solid white;
     width: 8rem;
+    font-size: 16px;
 }
-.nav-link:hover {
+
+.how{
+    background-color: #212121;
+    color: #e1e1e1;
+    border: 1px solid #e1e1e1;
+}
+
+.how:hover{
     color: red;
+    border: 1px solid red;
+    transition: ease-in 0.5s;
     cursor: pointer;
-    border-color: red;
+}
+
+.get-started:hover{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    transition: ease-in 0.5s;
+}
+
+.nav-link a:hover{
+    color: red;
+    transition: ease-in 0.5s;
 }
 .navbar {
     background-color: #212121;
@@ -42,6 +64,11 @@ a {
     justify-content: space-between;
     align-items: center;
 }
+.nav-header:hover{
+    color: red;
+    transition: ease-in 0.3s;
+    cursor: pointer;
+}
 .nav-toggle {
     border: transparent;
     background: transparent;
@@ -52,6 +79,10 @@ a {
 .nav-links {
     height: 0;
     overflow: hidden;
+}
+.nav-links:hover{
+    color: red;
+    transition: ease-in 0.5s;
 }
 .buttons {
     height: 0;
@@ -70,7 +101,6 @@ a {
 .content-wrapper1, .content-wrapper2 {
     width: 100%;
     background-color: #121212;
-    /* border: 1px solid #e1e1e1; */
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -123,10 +153,17 @@ a {
     background-color: #e1e1e1;
     cursor: pointer;
 }
+
+.start:hover{
+    background-color: red;
+    color: #e1e1e1;
+}
+
 .start img {
     width: 15px;
     height: 15px;
     margin-left: 5px;
+    color: white;
 }
 .card-container {
     width: 100%;
@@ -293,7 +330,7 @@ a {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 40px;
+        padding: 20 40px;
     }
     .nav-toggle {
         display: none;
@@ -309,7 +346,7 @@ a {
         border-bottom: none;
         margin: 0 10px;
     }
-    .buttons {
+    .buttons {  
         height: auto;
     }
     .how, .get-started {
@@ -322,5 +359,83 @@ a {
     .get-started {
         background-color: #e1e1e1;
         border: none;
+    }
+
+    .content-wrapper1{
+        align-items: center;
+    }
+
+    .footer-about h2, .footer-links h2, .footer-social h2{
+        display: flex;
+        justify-content: center;
+    }
+    .header{
+        text-align: left;
+    }
+    
+    .content-wrapper1{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .text{
+        font-size: 12px;
+    }
+    .content-wrapper2{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card1-content2 .body-text{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px){
+    .content-wrapper1{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .header{
+        text-align: left;
+    }
+
+    .content-wrapper2{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .card-content2, .text-body{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1920px){
+    .container{
+        max-width: 1450px;
+    }
+    .nav-header{
+        font-size: 16px;
+    }
+    
+    .header{
+        font-size: 26px;
+    }
+    .content2{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .title{
+        text-align: left;
+    }
+
+    .text{
+        font-size: 16px;
+        text-align: left;
+    }
+    .footer-about{
+        text-align: center;
+    }
+    .footer-links{
+        text-align: left;
     }
 }

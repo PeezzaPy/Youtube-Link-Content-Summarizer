@@ -21,7 +21,7 @@
       </div>
       <nav class="nav-links" id="navLinks">
         <ul>
-          <li class="nav-link"><a href="#">Home</a></li>
+          <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
           <li class="nav-link"><a href="#">About</a></li>
           <li class="nav-link"><a href="#">Workaround</a></li>
         </ul>
@@ -50,7 +50,7 @@
           from text, and translate languages.
         </p>
         <a href="{{url_for('get_started.get_started_page')}}">
-          <button class="start">Start <img src="{{url_for('static', filename='assets/start.svg')}}" alt="Start icon"></button>
+          <button class="start">Get Started<!--<img src="{{url_for('static', filename='assets/start.svg')}}" alt="Start icon">--></button>
         </a>
       </div>
     </section>
@@ -58,7 +58,7 @@
       <div class="card-container">
         <div class="card1">
           <div class="card1-content1">  
-            <p class="header">YOUTUBE VIDEO TOO LONG?<br>WE MADE IT EASY FOR YOU!</p>
+            <p class="header">YouTube Video Too Long? <br>We Made It Easy For You!</p>
             <img src="{{url_for('static', filename='assets/ted.svg')}}" alt="TED icon">
           </div>
           <div class="card1-content2">
