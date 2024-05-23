@@ -1,6 +1,10 @@
 app/blueprints/__pycache__/
 app/utils/__pycache__/
+app/utils/__pycache__/summarizer.cpython-311.pyc
 app/__pycache__/
 venv/
 config.json
 experimental.py
+data/
+requirements.txt
+
