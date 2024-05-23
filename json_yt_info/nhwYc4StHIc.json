@@ -1,10 +1,10 @@
 {
     "kind": "youtube#videoListResponse",
-    "etag": "lNp4RtDhi3rSwXLdwdQJOdK4e60",
+    "etag": "gim2crTTNKDOcdRvQ4rPCr9efiA",
     "items": [
         {
             "kind": "youtube#video",
-            "etag": "zeHqQUanZucnXgVWupELQ2LfQEY",
+            "etag": "M-9YTstxfgZd82d1LVt5DDTG408",
             "id": "nhwYc4StHIc",
             "snippet": {
                 "publishedAt": "2019-09-07T16:00:14Z",
