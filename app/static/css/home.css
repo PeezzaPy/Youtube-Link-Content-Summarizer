@@ -157,6 +157,7 @@ a {
 .start:hover{
     background-color: red;
     color: #e1e1e1;
+    transition: ease-in 0.5s;
 }
 
 .start img {
