@@ -1,89 +1,95 @@
-<!-- summary.html -->
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href=" {{ url_for('static', filename='css/summary.css') }}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Summary</title>
-</head>
-<body>
-<!--Will be deleted pag maayos na navbar-->
-<div class="bar">
-    <p class="logo"> INSIGHT. </p>
-    <div class="nav">
-        <p> Home </p>
-        <p> About </p>
-        <p> Workaround </p>
-    </div>
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href=" {{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+        <link href=" {{ url_for('static', filename='css/summary.css') }}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Summary</title>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container flex-nav">
+            <div class="nav-header">
+                <h1 onclick="window.location.href='/'">insight.</h1>
+                <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav id="navLinks" class="nav-links">
+                <ul>
+                <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
+                <li class="nav-link"><a href="{{url_for('about.about_page')}}">About</a></li>
+                <li class="nav-link"><a href="#">Workaround</a></li>
+                </ul>
+            </nav>
+            <div id="navButtons" class="buttons">
+                <button class="how" onclick="window.location.href='/how'">How it works?</button>
+                <button class="get-started" onclick="window.location.href='/get_started'">Get started</button>
+            </div>
+            </div>
+        </header>
 
-<div class="container">
+        <main>
+            <div class="container">
+                <div class="thumbnail" style="background-image: url({{ thumbnail }})"></div>
+                <div class="info_button">
+                    <div class="video-info">
+                        <table>
+                            <tr>
+                                <td id="td1">Video Title</td>
+                                <td id="td2">{{ video_title }}</td>
+                            </tr>
+                            <tr>
+                                <td id="td1">Channel</td>
+                                <td id="td2">{{ channel }}</td>
+                            </tr>
+                            <tr>
+                                <td id="td1">Views</td>
+                                <td id="td2">{{ views }}</td>
+                            </tr>
+                            <tr>
+                                <td id="td1">Date Uploaded</td>
+                                <td id="td2">{{ video_date }}</td>
+                            </tr>
+                        </table>
+                    </div>
 
-      <div class="thumbnail" style="background-image: url({{ thumbnail }})">
-      </div>
+                    <div class="actions">
+                        <div class="button-wrapper">
+                            <p>Transcrpt</p>
+                            <button>Download</button>
+                        </div>
+                        <div class="button-wrapper">
+                            <p>Summarized</p>
+                            <button>Download</button>
+                        </div>
+                        <div class="button-wrapper">
+                            <p>Copy Text</p>
+                            <button>Copy Text</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
 
-
-      <div class="info_button">
-        <div class="video-info">
-          <table>
-            <tr>
-                <td id="td1">Video Title</td>
-                <td id="td2">{{ video_title }}</td>
-            </tr>
-            <tr>
-                <td id="td1">Channel</td>
-                <td id="td2">{{ channel }}</td>
-            </tr>
-            <tr>
-                <td id="td1">Views</td>
-                <td id="td2">{{ views }}</td>
-            </tr>
-            <tr>
-                <td id="td1">Date Uploaded</td>
-                <td id="td2">{{ video_date }}</td>
-            </tr>
-        </table>
-      </div>
-
-        <div class="actions">
-          <div class="button-wrapper">
-            <p>Transcrpt</p>
-            <button>Download</button>
-        </div>
-        <div class="button-wrapper">
-            <p>Summarized</p>
-            <button>Download</button>
-        </div>
-        <div class="button-wrapper">
-            <p>Copy Text</p>
-            <button>Copy Text</button>
-        </div>
-        </div>
-
-      </div>
-</div>
-    
-</div>
-
-  <div class="output-box">
-    <div class="output">
-      
-      {% if summary %}
-          <p>{{ summary }}</p>
-          <!--<ul>
-              {% for sentence in summary %}
-                  <li>{{ sentence }}</li>
-              {% endfor %}
-          </ul>-->
-      {% else %}
-          <p>No summary available</p>
-      {% endif %}
-    </div>
-  </div>
-
-</body>
+            <div class="output-box">
+                <div class="output">
+                    {% if summary %}
+                        <p>{{ summary }}</p>
+                        <!--<ul>
+                            {% for sentence in summary %}
+                                <li>{{ sentence }}</li>
+                            {% endfor %}
+                        </ul>-->
+                    {% else %}
+                        <p>No summary available</p>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+    </body>
 </html>

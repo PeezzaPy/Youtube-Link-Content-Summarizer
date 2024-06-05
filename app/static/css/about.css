@@ -1,0 +1,123 @@
+body {
+    height: 100vh;
+}
+
+.main-container {
+    widtH: 100%;
+    padding: 15vh 10vw;
+    color: #e1e1e1;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.about-us-1 {
+    flex: 1;
+    display: block;
+}
+
+.about-us-2 {
+    flex: 1;
+}
+
+.about-us-1 p:nth-child(1) {
+    font-size: 18px;
+    color: red;
+}
+
+.about-us-1 p:nth-child(2) {
+    font-size: 34px;
+}
+
+.about-us-2 p {
+    padding-top: 35px;
+    font-size: 20px;
+}
+
+.group-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.indiv-img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.team-header {
+    width: 50%;
+    text-align: center;
+}
+
+.team-header p:nth-child(1) {
+    font-size: 34px;
+    color: red;
+}
+
+.team-header p:nth-child(2) {
+    font-size: 38px;
+}
+
+.indiv-img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    width: 85%;
+}
+
+.img-div {
+    text-align: center;
+}
+
+.img-div img {
+    height: 250px;
+    width: 250px;
+    border-radius: 30px;
+}
+
+.img-div p:nth-child(2) {
+    font-size: 22px;
+}
+
+.img-div p:nth-child(3) {
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* REUSABLE STYLES */
+.txt-left {
+    text-align: left;
+}
+
+.font-wt-600 {
+    font-weight: 600;
+}
+
+.font-wt-700 {
+    font-weight: 700;
+}
+
+.mg-bottom-80 {
+    margin-bottom: 80px;
+}
+
+.mg-bottom-100 {
+    margin-bottom: 100px;
+}
+
+.mg-bottom-120 {
+    margin-bottom: 120px;
+}
+
+

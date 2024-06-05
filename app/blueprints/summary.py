@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from ..utils.video_info import *
 from ..utils.summarizer_bart import * 
-from ..utils.summarizer import * 
+from ..utils.text_process import * 
 
 # Create a blueprint for the home page
 summary = Blueprint('summary', __name__)

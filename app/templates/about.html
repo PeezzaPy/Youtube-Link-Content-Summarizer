@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/about.css') }}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/85f4d11930.js" crossorigin="anonymous"></script>
+        <title>Insight</title>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container flex-nav">
+            <div class="nav-header">
+                <h1 onclick="window.location.href='/'">insight.</h1>
+                <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav id="navLinks" class="nav-links">
+                <ul>
+                <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
+                <li class="nav-link"><a href="{{url_for('about.about_page')}}">About</a></li>
+                <li class="nav-link"><a href="#">Workaround</a></li>
+                </ul>
+            </nav>
+            <div id="navButtons" class="buttons">
+                <button class="how" onclick="window.location.href='/how'">How it works?</button>
+                <button class="get-started" onclick="window.location.href='/get_started'">Get started</button>
+            </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="main-container">
+                <div class="about-container mg-bottom-80">
+                    <div class="about-us-1">
+                        <p class="font-wt-600">About our team.</p>
+                        <p class="font-wt-700">
+                            Established group of students
+                            since first-year in Computer 
+                            Science with one dream.
+                        </p>
+                    </div>
+                    <div class="about-us-2">
+                        <p>
+                            We are a group of students who
+                            have been together since our first
+                            year in Computer Science. We have
+                            always been passionate about
+                            technology and have always wanted
+                            to make a difference in the world.
+                        </p>
+                    </div>
+                </div>
+                <div class="group-img-container mg-bottom-120">
+                    <img src="{{ url_for('static', filename="assets/group-pic.png") }}">
+                </div>
+                <div class="indiv-img-container">
+                    <div class="team-header mg-bottom-80">
+                        <p class="font-wt-600">Meet our team.</p>
+                        <p class="font-wt-700">Meet everyone who made this possible.</p>
+                    </div>
+                    <div class="indiv-img">
+                        <div class="img-div">
+                            <img src="{{ url_for('static', filename='assets/jk-pic.png') }}">
+                            <p class="font-wt-600">Patrick Marasigan</p>
+                            <p>Back-end Developer</p>
+                        </div>
+                        <div class="img-div">
+                            <img src="{{ url_for('static', filename='assets/jk-pic.png') }}">
+                            <p class="font-wt-600">Kyle Agullo</p>
+                            <p>Front-end Developer</p>
+                        </div>
+                        <div class="img-div">
+                            <img src="{{ url_for('static', filename='assets/jk-pic.png') }}">
+                            <p class="font-wt-600">Matthew Navale</p>
+                            <p>Back-end Developer</p>
+                        </div>
+                        <div class="img-div">
+                            <img src="{{ url_for('static', filename='assets/jk-pic.png') }}">
+                            <p class="font-wt-600">Deniece Gabaon</p>
+                            <p>Front-end Developer</p>
+                        </div>
+                        <div class="img-div">
+                            <img src="{{ url_for('static', filename='assets/jk-pic.png') }}">
+                            <p class="font-wt-600">Blessie Bolima</p>
+                            <p>Front-end Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

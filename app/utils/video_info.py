@@ -65,8 +65,6 @@ def get_transcript(video_id):
 
         # Parse the text only
         text = ' '.join([item['text'] for item in transcript])
-
-        print("RAW TRANSCRIPT: ", text, end="\n\n")
         
         # Filter out noise from the transcript
         cleaned_text = process_transcript(text)
@@ -96,8 +94,6 @@ def process_transcript(text):
     # Additional clean-up: handle double punctuation and spaces
     formatted_text = re.sub(r'\s+', ' ', formatted_text)
     formatted_text = re.sub(r'\.\.', '.', formatted_text)
-    
-    print("Formatted text: ", formatted_text, end="\n\n")
 
     return ' '.join(cleaned_text.split())
 
