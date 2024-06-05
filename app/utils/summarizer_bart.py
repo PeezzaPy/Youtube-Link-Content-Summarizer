@@ -1,18 +1,20 @@
 from transformers import BartTokenizer, BartForConditionalGeneration
-import textwrap
 
-def summarize_transcript(transcript):
-    # Log the transcript
-    print(transcript)
+model_dir = "D:/TUP SCHOOLWORKS/3rd Year/ACTIVITIES/2ND SEM/AUTOMATA/Youtube-Link-Content-Summarizer/app/model/trained_model"
+tokenizer = BartTokenizer.from_pretrained(model_dir)
+model = BartForConditionalGeneration.from_pretrained(model_dir)
 
-    model_name = "facebook/bart-large-cnn"
-    tokenizer = BartTokenizer.from_pretrained(model_name)
-    model = BartForConditionalGeneration.from_pretrained(model_name)
-
-    inputs = tokenizer.encode("summarize: " + transcript, return_tensors="pt", max_length=1024, truncation=True)
-    summary_ids = model.generate(inputs, max_length=150, min_length=75, length_penalty=2.0, num_beams=4, early_stopping=True)
-
+def summarize_transcript(text, max_length=150, min_length=10, do_sample=False):
+    inputs = tokenizer([text], max_length=1024, return_tensors='pt', truncation=True)
+    summary_ids = model.generate(
+        inputs['input_ids'], 
+        num_beams=4, 
+        max_length=max_length, 
+        min_length=min_length, 
+        length_penalty=2.0, 
+        early_stopping=True, 
+        do_sample=do_sample
+    )
     summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-    formatted_summary = "\n".join(textwrap.wrap(summary, width=80))
-    
-    return formatted_summary
+
+    return summary

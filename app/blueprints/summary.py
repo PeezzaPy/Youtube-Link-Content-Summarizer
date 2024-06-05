@@ -20,21 +20,7 @@ def summary_page():
             transcript = get_transcript(video_id)
 
             if transcript:    
-                # NLP for summarization
                 summary = summarize_transcript(transcript)
-                # word_list = token(transcript)
-                # print(f"Word List: {word_list}")
-                # sent_list = sent_token(transcript)
-                # print(f"Sentence List: {sent_list}")
-                # filtered_words = remove_stopwords(word_list)
-                # print(f"Filtered Words: {filtered_words}")
-                # word_frequency = word_freq(filtered_words)
-                # word_frequency = max_freq(word_frequency)
-                # print(f"Word Frequency: {word_frequency}")
-                # sent_scores = sentence_scores(sent_list, word_frequency)
-                # print(f"Sentence Scores: {sent_scores}")
-                # summary = get_summary(sent_scores)
-                # print(f"Summary: {summary}")
             else:
                 summary += 'TRANSCRIPT NOT AVAILABLE'
         else:

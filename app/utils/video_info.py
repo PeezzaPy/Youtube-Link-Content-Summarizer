@@ -1,8 +1,14 @@
 from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api import TranscriptsDisabled
+from youtube_transcript_api import TranscriptsDisabled, NoTranscriptFound
 from googleapiclient.discovery import build
+from datetime import datetime
 from .json_handler import *
+from nltk import sent_tokenize
+import spacy
 import re
+
+# Load SpaCy model
+nlp = spacy.load("en_core_web_sm")
 
 # Parse and get the video ID
 def get_video_id(url):
@@ -29,41 +35,72 @@ def get_video_id(url):
 
 # Preprocess string from transcript
 def clean_text(text):
-    # Remove special characters
-    text = re.sub(r'\W', ' ', text)
+    text = re.sub(r'\[\d+:\d+:\d+\]', '', text)
 
-    # Remove single characters left as a result of removing special characters
-    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
+    # Remove action-text
+    text = re.sub(r'\[[^\]]*\]', '', text)
 
-    # Remove single characters from the start
-    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)
+    # Remove [ __ ]
+    text = re.sub(r'\[\s*__\s*\]', '', text)
 
-    # Substitute multiple spaces with single space
-    text = re.sub(r'\s+', ' ', text, flags=re.I)
-    
-    # Convert to lowercase
-    text = text.lower()
+    # Split into sentences
+    sentences = sent_tokenize(text)
+
+    # Form into paragraphs
+    paragraphs = []
+    for i in range(0, len(sentences), 5):  # Change 5 to the number of sentences you want in each paragraph
+        paragraph = ' '.join(sentences[i:i+5])
+        paragraphs.append(paragraph)
+
+    # Join paragraphs with newline characters
+    text = '\n'.join(paragraphs)
 
     return text
 
 
 # Get transcript only from dict object
 def get_transcript(video_id):
-    all_text = ""   # store all text from transcript
     try:
         transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
         # Parse the text only
-        for item in transcript:
-            all_text += item['text'] + " "
+        text = ' '.join([item['text'] for item in transcript])
 
-        # Remove new line (due to video subtitles positioning)
-        all_text = all_text.replace("\n", " ")
+        print("RAW TRANSCRIPT: ", text, end="\n\n")
+        
+        # Filter out noise from the transcript
+        cleaned_text = process_transcript(text)
 
-        return all_text
+        return cleaned_text
+    
     except TranscriptsDisabled:
         return None
     
+    except NoTranscriptFound:
+        return None
+    
+
+# Function to filter out noise from the transcript text
+def process_transcript(text):
+    cleaned_text = re.sub(r'\[.*?\]|\(.*?\)', '', text)
+
+    # Insert basic punctuation for sentence segmentation
+    text = re.sub(r'(?<!\w)([a-zA-Z]+)(?=\s+[A-Z])', r'\1.', cleaned_text)
+    
+    # Process text with SpaCy
+    doc = nlp(text)
+    
+    # Reconstruct text with proper sentences
+    formatted_text = ' '.join([sent.text.capitalize() for sent in doc.sents])
+    
+    # Additional clean-up: handle double punctuation and spaces
+    formatted_text = re.sub(r'\s+', ' ', formatted_text)
+    formatted_text = re.sub(r'\.\.', '.', formatted_text)
+    
+    print("Formatted text: ", formatted_text, end="\n\n")
+
+    return ' '.join(cleaned_text.split())
+
 
 # Get video info
 def get_video_info(video_id):
@@ -77,12 +114,20 @@ def get_video_info(video_id):
     )
     response = request.execute()
 
+    # Get youtube content details
     id = response['items'][0]['id']
+
     title = response['items'][0]['snippet']['title']
-    publish_date = response['items'][0]['snippet']['publishedAt']
+
+    publish_date = response['items'][0]['snippet']['publishedAt'][:10]
+    publish_date = datetime.strptime(publish_date, "%Y-%m-%d").date()
+
     thumbnail = response['items'][0]['snippet']['thumbnails']['medium']['url']
+
     channel = response['items'][0]['snippet']['channelTitle']
-    views = response['items'][0]['statistics']['viewCount']
+    
+    views = int(response['items'][0]['statistics']['viewCount'])
+    views = f"{views:,}"        # make it comma separated per thousands
 
     make_yt_info_json(response, id)
     
