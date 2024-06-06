@@ -1,10 +1,14 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
 body {
     height: 100vh;
 }
 
 .main-container {
     widtH: 100%;
-    padding: 15vh 10vw;
+    padding: min(max(15vh, 40px), 100px) 10vw;
     color: #e1e1e1;
 }
 
@@ -25,17 +29,17 @@ body {
 }
 
 .about-us-1 p:nth-child(1) {
-    font-size: 18px;
+    font-size: min(max(14px, 2vw), 18px);
     color: red;
 }
 
 .about-us-1 p:nth-child(2) {
-    font-size: 34px;
+    font-size: min(max(24px, 3vw), 34px);
 }
 
 .about-us-2 p {
     padding-top: 35px;
-    font-size: 20px;
+    font-size: min(max(16px, 2vw), 20px);
 }
 
 .group-img-container {
@@ -54,17 +58,17 @@ body {
 }
 
 .team-header {
-    width: 50%;
+    width: min(80%, 600px);
     text-align: center;
 }
 
 .team-header p:nth-child(1) {
-    font-size: 34px;
+    font-size: min(max(5vw, 20px), 34px);
     color: red;
 }
 
 .team-header p:nth-child(2) {
-    font-size: 38px;
+    font-size: min(max(5vw, 26px), 38px);
 }
 
 .indiv-img {
@@ -120,4 +124,34 @@ body {
     margin-bottom: 120px;
 }
 
+
+@media screen and (max-width: 1440px) {
+    .group-img-container img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        padding-top: min(max(10vh, 40px), 50px);
+        padding-bottom: min(max(10vh, 40px), 50px);
+    }
+    .about-container {
+        flex-direction: column;
+        gap: 0;
+    }
+    .group-img-container {
+        display: none;
+    }
+    .team-header {
+        margin-bottom: 60px;
+    }
+    .indiv-img {
+        gap: 60px;
+    }
+}
 

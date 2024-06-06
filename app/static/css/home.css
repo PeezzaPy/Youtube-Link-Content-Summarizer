@@ -81,6 +81,9 @@ a {
     height: 0;
     overflow: hidden;
 }
+.nav-links ul {
+    text-align: left;
+}
 .nav-links:hover{
     color: red;
     transition: ease-in 0.5s;
