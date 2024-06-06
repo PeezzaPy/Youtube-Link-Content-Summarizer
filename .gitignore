@@ -1,3 +1,7 @@
 venv/
 app/__pycache__/
 app/blueprints/__pycache__/
+app/model/
+config.json
+data/
+venv/
