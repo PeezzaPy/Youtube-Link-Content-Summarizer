@@ -106,6 +106,19 @@
                     <p id="paragraph">Summarize videos easily by just copy and pasting a YouTube link.</p>
                 </div>
             </div>
+
+            <div id="modal">
+                <div class='loading-content'>
+                    <div class="pre-loading">
+                        <div class="spinner"></div>
+                    </div>
+                    <div>
+                        <p class='loading-text'>Summarizing Transcript...</p>
+                    </div>
+                </div>
+            </div>
         </main>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src={{ url_for('static', filename="js/scripts.js") }}></script>
 </html>

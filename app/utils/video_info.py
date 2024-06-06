@@ -125,9 +125,9 @@ def get_video_info(video_id):
     views = int(response['items'][0]['statistics']['viewCount'])
     views = f"{views:,}"        # make it comma separated per thousands
 
-    make_yt_info_json(response, id)
+    # make_yt_info_json(response, id)
     
-    print_video_info(title, publish_date)
+    # print_video_info(title, publish_date)
 
     return title, publish_date, thumbnail, channel, views
 

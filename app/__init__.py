@@ -7,6 +7,7 @@ from .blueprints.home import home
 # Register app route
 def create_app():
     app = Flask(__name__)
+    app.secret_key = 'secret-key'
     app.register_blueprint(home)
     app.register_blueprint(about)
     app.register_blueprint(get_started)

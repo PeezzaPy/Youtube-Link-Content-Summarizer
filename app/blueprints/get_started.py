@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template
 
 get_started = Blueprint('get_started', __name__)
 

@@ -13,22 +13,21 @@
     <body>
         <header class="navbar">
             <div class="container flex-nav">
-            <div class="nav-header">
+            <div class="nav-header" styl="width: 50%;">
                 <h1 onclick="window.location.href='/'">insight.</h1>
                 <button class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <nav id="navLinks" class="nav-links">
+            <nav id="navLinks" class="nav-links" style="display: flex; flex-direction: row; width: 40%; margin-left: 50px;">
                 <ul>
-                <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
-                <li class="nav-link"><a href="{{url_for('about.about_page')}}">About</a></li>
-                <li class="nav-link"><a href="#">Workaround</a></li>
+                <li class="nav-link"><a href="{{url_for('home.home_page')}} " style='width: 30%;'>Home</a></li>
+                <li class="nav-link"><a href="{{url_for('about.about_page')}}" style='width: 30%;'>About</a></li>
                 </ul>
             </nav>
             <div id="navButtons" class="buttons">
                 <button class="how" onclick="window.location.href='/how'">How it works?</button>
-                <button class="get-started" onclick="window.location.href='/get_started'">Get started</button>
+                <button class="get-started" onclick="window.location.href='/get_started'">Summarize More</button>
             </div>
             </div>
         </header>
@@ -60,17 +59,16 @@
 
                     <div class="actions">
                         <div class="button-wrapper">
-                            <p>Transcrpt</p>
-                            <button>Download</button>
+                            <p>Transcript</p>
+                            <button id="downloadTranscript" class="get-buttons">Download</button>
                         </div>
                         <div class="button-wrapper">
                             <p>Summarized</p>
-                            <button>Download</button>
+                            <button id="downloadSummary" class="get-buttons">Download</button>
                         </div>
                         <div class="button-wrapper">
                             <p>Copy Text</p>
-                            <button>Copy Text</button>
-                        </div>
+                            <button id="copySummary" class="get-buttons">Copy Text</button>
                         </div>
                     </div>
                 </div>    
@@ -80,11 +78,6 @@
                 <div class="output">
                     {% if summary %}
                         <p>{{ summary }}</p>
-                        <!--<ul>
-                            {% for sentence in summary %}
-                                <li>{{ sentence }}</li>
-                            {% endfor %}
-                        </ul>-->
                     {% else %}
                         <p>No summary available</p>
                     {% endif %}
@@ -92,4 +85,6 @@
             </div>
         </main>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src={{ url_for('static', filename="js/scripts.js") }}></script>
 </html>

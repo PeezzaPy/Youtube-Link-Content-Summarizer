@@ -173,6 +173,57 @@ body {
 }
 
 
+/* Loading modal styles */
+#modal {
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.loading-text {
+    color: #E1E1E1;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: -50px;
+    margin-bottom: 100px;
+    animation: fade 3s infinite;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Preloading spinner */
+.spinner {
+    margin: 100px auto;
+    width: 80px;
+    height: 80px;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid red;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    75% { transform: rotate(45deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 /* Media Queries */
 
@@ -205,44 +256,43 @@ body {
     
 
     #youtubeLink {
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    padding-left: 25px;
-    width: 480px;
-    height: 55px;
-}
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        padding-left: 25px;
+        width: 480px;
+        height: 55px;
+    }
 
-#submitButton {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 100px;
-    height: 60px;
-    position: relative;
-    left: -35px;
-}
+    #submitButton {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 100px;
+        height: 60px;
+        position: relative;
+        left: -35px;
+    }
 
-#youtubeForm {
-    display: flex;
-    font-family: "Poppins", sans-serif;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
+    #youtubeForm {
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 
-.description {
-    width: 90%;
-    margin-right: 0;
-    margin-bottom: 15px;
-}
+    .description {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 
-.container2 input[type="text"],
-.container2 button {
-    flex: w;
-    margin: 0; /* Remove default margin */
-}
-
+    .container2 input[type="text"],
+    .container2 button {
+        flex: w;
+        margin: 0; /* Remove default margin */
+    }
 }
 
 @media (max-width: 550px) {

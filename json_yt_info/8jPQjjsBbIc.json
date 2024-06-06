@@ -1,10 +1,10 @@
 {
     "kind": "youtube#videoListResponse",
-    "etag": "0EChHqWK7GHKlWvBkboWB0MwVuE",
+    "etag": "ZsSzwKlUJNixERWCUPppmvhnAZQ",
     "items": [
         {
             "kind": "youtube#video",
-            "etag": "I5oSKWhey7--YIPLB_3dd5ksR_0",
+            "etag": "XszM-JICqYBZqxImD5mZ25BsINc",
             "id": "8jPQjjsBbIc",
             "snippet": {
                 "publishedAt": "2015-11-23T16:58:55Z",
@@ -56,8 +56,8 @@
                 "defaultAudioLanguage": "en"
             },
             "statistics": {
-                "viewCount": "16949946",
-                "likeCount": "219070",
+                "viewCount": "16951945",
+                "likeCount": "219096",
                 "favoriteCount": "0",
                 "commentCount": "3456"
             }

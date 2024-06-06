@@ -1,114 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/85f4d11930.js" crossorigin="anonymous"></script>
-    <title>Insight</title>
-</head>
-<body>
-  <header class="navbar">
-    <div class="container flex-nav">
-      <div class="nav-header">
-        <h1>insight.</h1>
-        <button class="nav-toggle" id="navToggle">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <nav id="navLinks" class="nav-links">
-        <ul>
-          <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
-          <li class="nav-link"><a href="{{url_for('about.about_page')}}">About</a></li>
-        </ul>
-      </nav>
-      <div id="navButtons" class="buttons">
-        <button class="how" onclick="window.location.href='/how'">How it works?</button>
-        <button class="get-started" onclick="window.location.href='/get_started'">Get started</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="content-wrapper1">
-      <div class="content1">
-        <p class="header">SUMMARIZE YOUTUBE VIDEOS<br>BY LEVERAGING NATURAL<br>LANGUAGE PROCESSING</p>
-        <img src="{{url_for('static', filename='assets/youtubepic.png')}}" alt="YouTube icon">
-      </div>
-      <div class="content2">
-        <p class="title">What is Natural Language Processing?</p>
-        <p class="text">Natural Language Processing (NLP) is like teaching
-          computers to understand and work with human language.
-          It involves developing algorithms and models that enable
-          computers to comprehend, interpret, and generate human language
-          in a way that's similar to how people do. For instance, NLP helps
-          computers understand the meaning of sentences, extract information
-          from text, and translate languages.
-        </p>
-        <a href="{{url_for('get_started.get_started_page')}}">
-          <button class="start">Get Started</button>
-        </a>
-      </div>
-    </section>
-    <section class="content-wrapper2">
-      <div class="card-container">
-        <div class="card1">
-          <div class="card1-content1">  
-            <p class="header">YouTube Video Too Long? <br>We Made It Easy For You!</p>
-            <img src="{{url_for('static', filename='assets/ted.svg')}}" alt="TED icon">
-          </div>
-          <div class="card1-content2">
-            <p class="header">How is it possible?</p>
-            <p class="body-text">Insight uses the YouTube API to get video captions from the provided YouTube link. It then extracts the captions from the video and feeds them into a Natural Language Processing system to output a summarized version.</p>
-          </div>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/85f4d11930.js" crossorigin="anonymous"></script>
+      <title>Insight</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container flex-nav">
+        <div class="nav-header">
+          <h1>insight.</h1>
+          <button class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-        <div class="card2">
-          <div class="card2-content1">
-            <p class="header">Fast and Easy to Use</p>
-            <img src="{{url_for('static', filename='assets/ted2.svg')}}">
-          </div>
-          <div class="card2-content2">
-            <p class="header">How Does it Work?</p>
-            <p class="body-text">Insight. Uses Youtube API to get video captions from the provided youtube link. It will then extract the caption from that video. The extracted caption from the video will be fed into the Natural Language Processing system wherein the captions will be processed to output a summarized version of the captions. </p>
-          </div>
+        <nav id="navLinks" class="nav-links">
+          <ul>
+            <li class="nav-link"><a href="{{url_for('home.home_page')}}">Home</a></li>
+            <li class="nav-link"><a href="{{url_for('about.about_page')}}">About</a></li>
+          </ul>
+        </nav>
+        <div id="navButtons" class="buttons">
+          <button class="how" onclick="window.location.href='/how'">How it works?</button>
+          <button class="get-started" onclick="window.location.href='/get_started'">Get started</button>
         </div>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-about">
-        <h2>insight.</h2>
-        <p>Made proudly by Red Devs and Bolima</p>
-      </div>
-      <div class="footer-links">
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Workaround</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h2>Follow Us</h2>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <main>
+      <section class="content-wrapper1">
+        <div class="content1">
+          <p class="header">SUMMARIZE YOUTUBE VIDEOS<br>BY LEVERAGING NATURAL<br>LANGUAGE PROCESSING</p>
+          <img src="{{url_for('static', filename='assets/youtubepic.png')}}" alt="YouTube icon">
+        </div>
+        <div class="content2">
+          <p class="title">What is Natural Language Processing?</p>
+          <p class="text">Natural Language Processing (NLP) is like teaching
+            computers to understand and work with human language.
+            It involves developing algorithms and models that enable
+            computers to comprehend, interpret, and generate human language
+            in a way that's similar to how people do. For instance, NLP helps
+            computers understand the meaning of sentences, extract information
+            from text, and translate languages.
+          </p>
+          <a href="{{url_for('get_started.get_started_page')}}">
+            <button class="start">Get Started</button>
+          </a>
+        </div>
+      </section>
+      <section class="content-wrapper2">
+        <div class="card-container">
+          <div class="card1">
+            <div class="card1-content1">  
+              <p class="header">YouTube Video Too Long? <br>We Made It Easy For You!</p>
+              <img src="{{url_for('static', filename='assets/ted.svg')}}" alt="TED icon">
+            </div>
+            <div class="card1-content2">
+              <p class="header">How is it possible?</p>
+              <p class="body-text">Insight uses the YouTube API to get video captions from the provided YouTube link. It then extracts the captions from the video and feeds them into a Natural Language Processing system to output a summarized version.</p>
+            </div>
+          </div>
+          <div class="card2">
+            <div class="card2-content1">
+              <p class="header">Fast and Easy to Use</p>
+              <img src="{{url_for('static', filename='assets/ted2.svg')}}">
+            </div>
+            <div class="card2-content2">
+              <p class="header">How Does it Work?</p>
+              <p class="body-text">Insight. Uses Youtube API to get video captions from the provided youtube link. It will then extract the caption from that video. The extracted caption from the video will be fed into the Natural Language Processing system wherein the captions will be processed to output a summarized version of the captions. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-about">
+          <h2>insight.</h2>
+          <p>Made proudly by Red Devs and Bolima</p>
+        </div>
+        <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Workaround</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 insight. All rights reserved.</p>
-    </div>
-  </footer>
-
+      <div class="footer-bottom">
+        <p>&copy; 2024 insight. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
 </html>
