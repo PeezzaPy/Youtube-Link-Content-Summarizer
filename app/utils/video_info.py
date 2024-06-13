@@ -1,5 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api import TranscriptsDisabled, NoTranscriptFound
+from urllib.parse import urlparse, parse_qs
 from googleapiclient.discovery import build
 from datetime import datetime
 from .json_handler import *
@@ -12,6 +13,13 @@ nlp = spacy.load("en_core_web_sm")
 
 # Parse and get the video ID
 def get_video_id(url):
+    # Parse the url
+    parsed_url = urlparse(url)
+
+    # Check if the URL is a valid youtube video link
+    if parsed_url.netloc not in ('www.youtube.com', 'youtube.com', 'youtu.be'):
+        return 'Invalid URL'
+  
     # Identifier for youtube video url
     if "youtube.com/watch?v=" in url:
         start_pos = url.find("youtube.com/watch?v=")
@@ -27,7 +35,6 @@ def get_video_id(url):
         video_id = url[start_pos + len("youtu.be/"):end_pos]
 
     if start_pos == -1 or end_pos == -1:
-        print("Not a valid youtube video link")
         return None
 
     return video_id

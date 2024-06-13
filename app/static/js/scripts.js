@@ -20,9 +20,6 @@ $(document).ready(function() {
             data: $(this).serialize(),
             success: function(response) {
                 $('#modal').hide(); 
-                setTimeout(() => {
-                    console.log("RESPONSE: ", response);
-                }, 5000);
                 window.location.href = "/summary";
             },
             error: function(error) {
@@ -34,14 +31,12 @@ $(document).ready(function() {
 
     // Download and copy clipboard listeners
     $("#downloadTranscript").click(function() {
-        console.log("dlts")
         $.get("http://127.0.0.1:5000/summary/download_transcript", function(data) {
             console.log(data);
         });
     });
 
     $("#downloadSummary").click(function() {
-        console.log("dlsummary")
         $.get("http://127.0.0.1:5000/summary/download_summary", function(data) {
             console.log(data);
         });
@@ -54,3 +49,34 @@ $(document).ready(function() {
     });
 });
 
+
+// Check if connection is online or offline
+function checkInternet() {
+    if (!(navigator.onLine)) {
+        if (document.getElementById('modal')) {
+            document.getElementById('modal').style.display = 'none';
+        }
+        document.getElementById('connectionModal').style.display = 'flex';
+        return;
+    }
+
+    fetch('https://www.google.com/', { 
+        mode: 'no-cors' 
+    })
+    .then(function(response) {
+        if (navigator.onLine) {
+            document.getElementById('connectionModal').style.display = 'none';
+        }
+    })
+    .catch(function(error) {
+        if (!(navigator.onLine)) {
+            if (document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+            document.getElementById('connectionModal').style.display = 'flex';
+        }
+    });
+}
+
+// Check internet connection every seconds
+setInterval(checkInternet, 100);
