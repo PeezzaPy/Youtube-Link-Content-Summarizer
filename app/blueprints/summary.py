@@ -9,10 +9,6 @@ import os
 # Create a blueprint for the home page
 summary = Blueprint('summary', __name__)
 
-# Directory to store temporary files
-tempdir = tempfile.gettempdir()
-downloads_folder = os.path.expanduser('~\\Downloads\\')
-
 # Global variables
 downloads_folder = os.path.expanduser('~\\Downloads\\')     # get the downloads folder path
 transcript = ''
@@ -61,9 +57,6 @@ def summary_page():
 
                 if transcript:    
                     transcript_summary = summarize_transcript(transcript)
-                    # Save transcript to a temporary file
-                    transcript_file = save_to_temp_file(transcript, 'transcript')
-                    session['transcript_file'] = transcript_file    # Store file path in session
                 else:
                     transcript_summary += 'TRANSCRIPT NOT AVAILABLE'
         else:
@@ -98,12 +91,6 @@ def summary_page():
     return render_template('summary.html', **data)
 
 
-def save_to_temp_file(content, prefix):
-    temp_file = tempfile.NamedTemporaryFile(mode='w', delete=False, prefix=prefix, dir=downloads_folder, suffix='.txt', encoding='utf-8')
-    temp_file.write(content)
-    temp_file.close()
-    return temp_file.name
-
 
 def get_unique_filename(path, filename):
     counter = 1
@@ -111,15 +98,14 @@ def get_unique_filename(path, filename):
     while os.path.exists(os.path.join(path, filename)):
         filename = f"{filename_parts[0]}({counter}){filename_parts[1]}"          # Append counter to filename
         counter += 1
+    print(filename)
     return filename
 
 
 @summary.route('/summary/download_transcript')
 def download_transcript():
-    transcript = session.get('transcript_file', '') 
     if transcript:
-        unique_filename = get_unique_filename(downloads_folder, 'transcript.txt')
-        return send_file(transcript, as_attachment=True, download_name=unique_filename)
+        return 'Transcript downloaded successfully!'
     else:
         return 'Transcript not available for download'
 
