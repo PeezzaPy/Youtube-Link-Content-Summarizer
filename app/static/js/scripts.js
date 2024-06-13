@@ -30,12 +30,6 @@ $(document).ready(function() {
     });
 
     // Download and copy clipboard listeners
-    $("#downloadTranscript").click(function() {
-        $.get("http://127.0.0.1:5000/summary/download_transcript", function(data) {
-            console.log(data);
-        });
-    });
-
     $("#downloadSummary").click(function() {
         $.get("http://127.0.0.1:5000/summary/download_summary", function(data) {
             console.log(data);

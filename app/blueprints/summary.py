@@ -1,9 +1,8 @@
-from flask import Blueprint, render_template, send_file, session, request
+from flask import Blueprint, render_template, session, request
 from ..utils.summarizer_bart import * 
 from ..utils.text_process import *
 from ..utils.video_info import *
 import pyperclip
-import tempfile 
 import os
 
 # Create a blueprint for the home page
@@ -44,7 +43,7 @@ def summary_page():
         link = request.form.get('yt-link')
         if link:
             video_id = get_video_id(link)
-            
+
             if video_id == 'Invalid URL':
                 transcript_summary += 'INVALID YOUTUBE URL'
                 video_title, publish_date, thumbnail, channel, views = '', '', '', '', ''
@@ -54,7 +53,7 @@ def summary_page():
                 print(f"PUBLISHED DATE: {publish_date}")
                 
                 transcript = get_transcript(video_id)
-
+                
                 if transcript:    
                     transcript_summary = summarize_transcript(transcript)
                 else:
@@ -102,12 +101,16 @@ def get_unique_filename(path, filename):
     return filename
 
 
-@summary.route('/summary/download_transcript')
-def download_transcript():
-    if transcript:
-        return 'Transcript downloaded successfully!'
-    else:
-        return 'Transcript not available for download'
+# @summary.route('/summary/download_transcript')
+# def download_transcript():
+#     if transcript:
+#         filename = get_unique_filename(downloads_folder, 'transcript.txt')
+#         with open(os.path.join(downloads_folder, filename), 'w') as f:
+#             f.write(str(transcript))
+#         return 'Transcript downloaded successfully!'
+#     else:
+#         return 'Transcript not available for download'
+
 
 @summary.route('/summary/download_summary')
 def download_summary():
