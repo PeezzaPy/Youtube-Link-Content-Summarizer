@@ -1,0 +1,261 @@
+# BACK END CODE
+
+
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api import TranscriptsDisabled, NoTranscriptFound
+from urllib.parse import urlparse, parse_qs
+from googleapiclient.discovery import build
+from datetime import datetime
+from .json_handler import *
+from nltk import sent_tokenize
+import spacy
+import re
+
+# Load SpaCy model
+nlp = spacy.load("en_core_web_sm")
+
+# Parse and get the video ID
+def get_video_id(url):
+    # Parse the url
+    parsed_url = urlparse(url)
+
+    # Check if the URL is a valid youtube video link
+    if parsed_url.netloc not in ('www.youtube.com', 'youtube.com', 'youtu.be'):
+        return 'Invalid URL'
+  
+    # Identifier for youtube video url
+    if "youtube.com/watch?v=" in url:
+        start_pos = url.find("youtube.com/watch?v=")
+        end_pos = url.find("&")
+        if end_pos == -1:
+            end_pos = len(url)
+        video_id = url[start_pos + len("youtube.com/watch?v="):end_pos]
+    elif "youtu.be" in url:
+        start_pos = url.find("youtu.be/")
+        end_pos = url.find("?")
+        if end_pos == -1:
+            end_pos = len(url)
+        video_id = url[start_pos + len("youtu.be/"):end_pos]
+
+    if start_pos == -1 or end_pos == -1:
+        return None
+
+    return video_id
+
+
+# Preprocess string from transcript
+def clean_text(text):
+    text = re.sub(r'\[\d+:\d+:\d+\]', '', text)
+
+    # Remove action-text
+    text = re.sub(r'\[[^\]]*\]', '', text)
+
+    # Remove [ __ ]
+    text = re.sub(r'\[\s*__\s*\]', '', text)
+
+    # Split into sentences
+    sentences = sent_tokenize(text)
+
+    # Form into paragraphs
+    paragraphs = []
+    for i in range(0, len(sentences), 5):  # Change 5 to the number of sentences you want in each paragraph
+        paragraph = ' '.join(sentences[i:i+5])
+        paragraphs.append(paragraph)
+
+    # Join paragraphs with newline characters
+    text = '\n'.join(paragraphs)
+
+    return text
+
+
+# Get transcript only from dict object
+def get_transcript(video_id):
+    try:
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+
+        # Parse the text only
+        text = ' '.join([item['text'] for item in transcript])
+        
+        # Filter out noise from the transcript
+        cleaned_text = process_transcript(text)
+
+        return cleaned_text
+    
+    except TranscriptsDisabled:
+        return None
+    
+    except NoTranscriptFound:
+        return None
+    
+
+# Function to filter out noise from the transcript text
+def process_transcript(text):
+    cleaned_text = re.sub(r'\[.*?\]|\(.*?\)', '', text)
+
+    # Insert basic punctuation for sentence segmentation
+    text = re.sub(r'(?<!\w)([a-zA-Z]+)(?=\s+[A-Z])', r'\1.', cleaned_text)
+    
+    # Process text with SpaCy
+    doc = nlp(text)
+    
+    # Reconstruct text with proper sentences
+    formatted_text = ' '.join([sent.text.capitalize() for sent in doc.sents])
+    
+    # Additional clean-up: handle double punctuation and spaces
+    formatted_text = re.sub(r'\s+', ' ', formatted_text)
+    formatted_text = re.sub(r'\.\.', '.', formatted_text)
+
+    return ' '.join(cleaned_text.split())
+
+
+# Get video info
+def get_video_info(video_id):
+    # Load api key
+    api_key = get_api_key()
+    youtube = build('youtube', 'v3', developerKey=api_key)
+    
+    request = youtube.videos().list(
+        part="snippet, statistics",
+        id=video_id
+    )
+    response = request.execute()
+
+    # Get youtube content details
+    id = response['items'][0]['id']
+
+    title = response['items'][0]['snippet']['title']
+
+    publish_date = response['items'][0]['snippet']['publishedAt'][:10]
+    publish_date = datetime.strptime(publish_date, "%Y-%m-%d").date()
+
+    thumbnail = response['items'][0]['snippet']['thumbnails']['medium']['url']
+
+    channel = response['items'][0]['snippet']['channelTitle']
+    
+    views = int(response['items'][0]['statistics']['viewCount'])
+    views = f"{views:,}"        # make it comma separated per thousands
+
+    # make_yt_info_json(response, id)
+    
+    # print_video_info(title, publish_date)
+
+    return title, publish_date, thumbnail, channel, views
+
+
+# Logging data
+def print_video_info(title, publish_date):
+    print(f"Title: {title}")
+    print(f"Published Date: {publish_date}")
+
+
+
+import nltk
+import heapq
+
+# Once downloaded, you can comment these lines
+# nltk.download('stopwords')
+# nltk.download('punkt')
+
+def token(text):
+    word_list = nltk.word_tokenize(text)
+    return word_list
+
+
+def sent_token(text):
+    sent_list = nltk.sent_tokenize(text)
+    return sent_list
+
+
+def remove_stopwords(word_list):
+    stopwords = set(nltk.corpus.stopwords.words('english'))
+    filtered_words = []
+
+    for word in word_list:
+        if word not in stopwords:
+            filtered_words.append(word)
+
+    return filtered_words
+
+
+def word_freq(filtered_words):
+    word_frequency = {}
+
+    for word in filtered_words:
+        if word not in word_frequency:
+            word_frequency[word] = 1
+        else:
+            word_frequency[word] += 1
+
+    return word_frequency
+
+
+def max_freq(word_frequency):
+    max_freq = max(word_frequency.values())
+
+    for word in word_frequency.keys():
+        word_frequency[word] = (word_frequency[word]/max_freq)
+
+    return word_frequency
+
+
+def sentence_scores(sent_list, word_frequency):
+    sent_scores = {}
+
+    for sentence in sent_list:
+        for word in nltk.word_tokenize(sentence.lower()):
+            if word in word_frequency.keys():
+                if len(sentence.split(' ')) < 30:
+                    if sentence not in sent_scores.keys():
+                        sent_scores[sentence] = word_frequency[word]
+                    else:
+                        sent_scores[sentence] += word_frequency[word]
+
+    return sent_scores
+
+
+def get_summary(sent_scores):
+    summary = heapq.nlargest(7, sent_scores, key=sent_scores.get)
+
+    return summary
+
+
+
+from transformers import BartTokenizer, BartForConditionalGeneration
+
+model_dir = "D:/TUP SCHOOLWORKS/3rd Year/ACTIVITIES/2ND SEM/AUTOMATA/Youtube-Link-Content-Summarizer/app/model/trained_model"
+tokenizer = BartTokenizer.from_pretrained(model_dir)
+model = BartForConditionalGeneration.from_pretrained(model_dir)
+
+def summarize_transcript(text, max_length=150, min_length=10, do_sample=False):
+    inputs = tokenizer([text], max_length=1024, return_tensors='pt', truncation=True)
+    summary_ids = model.generate(
+        inputs['input_ids'], 
+        num_beams=4, 
+        max_length=max_length, 
+        min_length=min_length, 
+        length_penalty=2.0, 
+        early_stopping=True, 
+        do_sample=do_sample
+    )
+    summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
+    
+    return summary
+
+
+
+import json
+
+# Retrieve youtube api key
+def get_api_key():
+    with open('config.json') as f:
+        data = json.load(f)
+    return data['YOUTUBE_API_KEY']
+
+
+
+
+
+GITHUB LINK: 
+https://github.com/PeezzaPy/Youtube-Link-Content-Summarizer.git
+
+
