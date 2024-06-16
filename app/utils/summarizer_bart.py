@@ -1,6 +1,6 @@
 from transformers import BartTokenizer, BartForConditionalGeneration
 
-model_dir = "D:/TUP SCHOOLWORKS/3rd Year/ACTIVITIES/2ND SEM/AUTOMATA/Youtube-Link-Content-Summarizer/app/model/trained_model"
+model_dir = "D:/TUP SCHOOLWORKS/3rd Year/ACTIVITIES/2ND SEM/AUTOMATA/PROJECT/Youtube-Link-Content-Summarizer/app/model/trained_model"
 tokenizer = BartTokenizer.from_pretrained(model_dir)
 model = BartForConditionalGeneration.from_pretrained(model_dir)
 
